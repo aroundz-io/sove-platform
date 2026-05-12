@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SOVE — Sovereign Value Economy</title>
+<meta name="description" content="문화 자산을 토큰화하는 RWA 인프라. GIWA Chain 위에서 작동합니다." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-name">SOVE</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#modules">Platform</a>
+      <a href="#dojang">Dojang</a>
+      <a href="#token">Token</a>
+      <a href="#tech">Technology</a>
+      <a href="#security">Security</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#whitepaper" class="btn btn-ghost">Whitepaper</a>
+      <a href="#launch" class="btn btn-primary">Launch</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-left">
+      <div class="hero-tag">
+        <span class="dot"></span>
+        <span>GIWA CHAIN · ETHEREUM L2</span>
+      </div>
+      <h1 class="hero-title">
+        Revolutionizing<br/>
+        Assets with<br/>
+        <span class="hl">RWA Tokenization.</span>
+      </h1>
+      <p class="hero-sub">
+        예술품, 티켓, 컬렉터블 — 모든 문화 자산의 실물 가치를 토큰으로.<br/>
+        GIWA Chain의 도장 기술 위에서 작동하는 차세대 RWA 인프라.
+      </p>
+      <div class="hero-cta">
+        <a href="#about" class="btn btn-primary btn-lg">Explore Platform</a>
+        <a href="#whitepaper" class="btn btn-outline btn-lg">Business Paper</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hc-frame">
+          <div class="hc-notch"></div>
+          <div class="hc-screen">
+            <div class="hc-top">
+              <div class="hc-time">9:41</div>
+              <div class="hc-brand">SOVE</div>
+              <div class="hc-menu">≡</div>
+            </div>
+            <div class="hc-balance">
+              <div class="hc-label">Total Portfolio</div>
+              <div class="hc-amount">$48,296.<span>24</span></div>
+              <div class="hc-delta">+$7,296 (4.65%)</div>
+            </div>
+            <div class="hc-actions">
+              <button class="hc-btn hc-btn-acc">Buy</button>
+              <button class="hc-btn">Sell</button>
+            </div>
+            <div class="hc-list-h">Current Assets</div>
+            <div class="hc-list">
+              <div class="hc-item">
+                <div class="hc-it-icon">B</div>
+                <div class="hc-it-name">Banksy</div>
+                <div class="hc-it-val">$8,798<span>USD</span></div>
+                <div class="hc-it-d up">+4.65%</div>
+              </div>
+              <div class="hc-item">
+                <div class="hc-it-icon">K</div>
+                <div class="hc-it-name">K-POP NFT</div>
+                <div class="hc-it-val">$3,706<span>USD</span></div>
+                <div class="hc-it-d up">+9.92%</div>
+              </div>
+              <div class="hc-item">
+                <div class="hc-it-icon">D</div>
+                <div class="hc-it-name">K-Drama</div>
+                <div class="hc-it-val">$3,258<span>USD</span></div>
+                <div class="hc-it-d down">-4.71%</div>
+              </div>
+              <div class="hc-item">
+                <div class="hc-it-icon">T</div>
+                <div class="hc-it-name">Concert Ticket</div>
+                <div class="hc-it-val">$1,563<span>USD</span></div>
+                <div class="hc-it-d up">+3.24%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hc-orbit hc-orbit-1">
+          <span>◉</span>
+        </div>
+        <div class="hc-orbit hc-orbit-2">
+          <span>♦</span>
+        </div>
+        <div class="hc-orbit hc-orbit-3">
+          <span>★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stats-wrap">
+    <div class="container">
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">5</div>
+          <div class="stat-label">Core Modules</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">$500M</div>
+          <div class="stat-label">Target AUM</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">110%</div>
+          <div class="stat-label">Insurance Coverage</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">99.95%</div>
+          <div class="stat-label">Uptime SLA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-head">
+        Verified through <span class="hl">trusted institutions</span>
+      </div>
+      <div class="trust-logos">
+        <div class="trust-logo">DUNAMU</div>
+        <div class="trust-logo">UPBIT</div>
+        <div class="trust-logo">GIWA</div>
+        <div class="trust-logo">CertiK</div>
+        <div class="trust-logo">Hacken</div>
+        <div class="trust-logo">Gnosis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">01 — About</div>
+      <h2 class="section-title">Sovereign Value Economy.</h2>
+    </div>
+
+    <div class="about-grid">
+      <p class="about-lead">
+        SOVE는 예술품과 공연 티켓, 한정판 컬렉터블을 블록체인에 토큰화하고
+        자체 거래소에서 거래할 수 있게 하는 RWA 통합 플랫폼입니다.
+      </p>
+      <p class="about-body">
+        높은 진입 장벽, 부족한 유동성, 불투명한 소유권 — 문화예술 시장이 오랜 시간 안고
+        있던 문제를 GIWA Chain의 기술과 표준화된 감정·수탁 프로세스로 해결합니다.
+        실물반환청구권 NFT와 실물가치 연동형 $SOVE 토큰이 이 모든 거래의 근간이 됩니다.
+      </p>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="p-num">01</div>
+        <div class="p-title">도장 검증</div>
+        <div class="p-desc">감정기관·수탁기관의 검수 결과를 GIWA Dojang으로 온체인 어테스테이션 발급</div>
+      </div>
+      <div class="principle">
+        <div class="p-num">02</div>
+        <div class="p-title">유동성</div>
+        <div class="p-desc">Orderbook과 AMM을 결합한 하이브리드 거래 엔진</div>
+      </div>
+      <div class="principle">
+        <div class="p-num">03</div>
+        <div class="p-title">실물 반환</div>
+        <div class="p-desc">NFT 소각과 동시에 보관된 실물을 인도받을 권리</div>
+      </div>
+      <div class="principle">
+        <div class="p-num">04</div>
+        <div class="p-title">창작자 보상</div>
+        <div class="p-desc">2차 거래마다 스마트 컨트랙트로 로열티 자동 분배</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM AUDIENCE -->
+<section class="audience" id="audience">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">02 — Who We Serve</div>
+      <h2 class="section-title">하나의 인프라,<br/>일곱 개의 시장.</h2>
+    </div>
+
+    <div class="aud-list">
+      <div class="aud-row">
+        <div class="aud-no">01</div>
+        <div class="aud-name">아트 컬렉터</div>
+        <div class="aud-need">유동성, 진위 검증, 합리적 수수료</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">02</div>
+        <div class="aud-name">신규 투자자</div>
+        <div class="aud-need">낮은 진입 장벽, 분산된 수익 기회</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">03</div>
+        <div class="aud-name">창작자 · 아티스트</div>
+        <div class="aud-need">자동 로열티, 글로벌 판매 채널</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">04</div>
+        <div class="aud-name">공연 기획사</div>
+        <div class="aud-need">암표 방지, 2차 거래 수수료 확보</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">05</div>
+        <div class="aud-name">컬렉터블 브랜드</div>
+        <div class="aud-need">진품 인증, 리세일 마켓 확보</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">06</div>
+        <div class="aud-name">DeFi 참여자</div>
+        <div class="aud-need">스테이킹, 유동성 풀, NFT 담보 대출</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">07</div>
+        <div class="aud-name">기관 투자자</div>
+        <div class="aud-need">OTC, 대량 거래, 인증 수탁</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules" id="modules">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">03 — Platform</div>
+      <h2 class="section-title">다섯 개의 코어 모듈.</h2>
+    </div>
+
+    <div class="module-tabs" id="moduleTabs">
+      <button class="mtab active" data-tab="m1">NFT Marketplace</button>
+      <button class="mtab" data-tab="m2">SOVE Exchange</button>
+      <button class="mtab" data-tab="m3">DeFi Hub</button>
+      <button class="mtab" data-tab="m4">Ticket Center</button>
+      <button class="mtab" data-tab="m5">Admin Console</button>
+    </div>
+
+    <!-- M1 -->
+    <div class="module-panel active" id="m1">
+      <div class="mod-grid">
+        <div class="mod-info">
+          <div class="mod-no">01</div>
+          <h3>NFT Marketplace</h3>
+          <p class="mod-lead">
+            감정 · 수탁 · 보험 정보가 GIWA Dojang으로 도장 발급된 실물 자산만 NFT로 발행됩니다.
+            오프체인 데이터의 진위는 도장 어테스테이션으로 온체인에 영구 기록됩니다.
+          </p>
+
+          <div class="mod-list">
+            <div class="ml-row"><span>유일 예술품</span><span>ERC-721</span></div>
+            <div class="ml-row"><span>에디션 예술품</span><span>ERC-1155</span></div>
+            <div class="ml-row"><span>공연 티켓</span><span>ERC-1155</span></div>
+            <div class="ml-row"><span>컬렉터블</span><span>ERC-1155</span></div>
+          </div>
+
+          <h4>거래 방식</h4>
+          <div class="kv-grid">
+            <div class="kv"><div class="k">English Auction</div><div class="v">가격 상승식 · 마감 임박 자동 연장</div></div>
+            <div class="kv"><div class="k">Fixed Price</div><div class="v">$SOVE 결제 시 수수료 50% 할인</div></div>
+            <div class="kv"><div class="k">Make Offer</div><div class="v">구매자 가격 제안 · 양방향 협상</div></div>
+            <div class="kv"><div class="k">OTC</div><div class="v">$100K 이상 · 에스크로 컨트랙트</div></div>
+          </div>
+        </div>
+
+        <div class="mod-card">
+          <div class="card-eyebrow">Sample Asset</div>
+          <div class="nft-title">Girl with Balloon</div>
+          <div class="nft-artist">Banksy · 2006 · Spray on Canvas</div>
+          <div class="card-divider"></div>
+          <div class="nft-rows">
+            <div class="row"><span class="k">Appraised Value</span><span class="v">USD 500,000</span></div>
+            <div class="row"><span class="k">Insurance</span><span class="v">USD 550,000</span></div>
+            <div class="row"><span class="k">Custodian</span><span class="v">Freeport · Singapore</span></div>
+            <div class="row"><span class="k">Dojang</span><span class="v ok">Sealed</span></div>
+            <div class="row"><span class="k">Token Standard</span><span class="v">ERC-721</span></div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-mini btn-mini-primary">Place Bid</button>
+            <button class="btn-mini">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M2 -->
+    <div class="module-panel" id="m2">
+      <div class="mod-grid">
+        <div class="mod-info">
+          <div class="mod-no">02</div>
+          <h3>SOVE Exchange</h3>
+          <p class="mod-lead">
+            Orderbook과 AMM을 결합한 하이브리드 거래소. Smart Order Router가
+            매 거래마다 최적 가격을 자동 매칭합니다.
+          </p>
+
+          <h4>수수료 배분</h4>
+          <div class="alloc">
+            <div class="alloc-row"><span class="alloc-pct">40%</span><span class="alloc-name">운영</span><span class="alloc-bar"><span style="width:40%"></span></span></div>
+            <div class="alloc-row"><span class="alloc-pct">30%</span><span class="alloc-name">토큰 소각</span><span class="alloc-bar"><span style="width:30%"></span></span></div>
+            <div class="alloc-row"><span class="alloc-pct">20%</span><span class="alloc-name">스테이킹</span><span class="alloc-bar"><span style="width:20%"></span></span></div>
+            <div class="alloc-row"><span class="alloc-pct">10%</span><span class="alloc-name">창작자 로열티</span><span class="alloc-bar"><span style="width:10%"></span></span></div>
+          </div>
+        </div>
+
+        <div class="mod-card">
+          <div class="card-eyebrow">Fee Structure</div>
+          <table class="fee-table">
+            <thead>
+              <tr><th>거래</th><th>기본</th><th>$SOVE</th><th>로열티</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>NFT 1차 판매</td><td>5.0%</td><td class="hl">2.5%</td><td>3.0%</td></tr>
+              <tr><td>NFT 2차 거래</td><td>2.5%</td><td class="hl">1.25%</td><td>1.0%</td></tr>
+              <tr><td>티켓 발행</td><td>3.0%</td><td class="hl">1.5%</td><td>2.0%</td></tr>
+              <tr><td>티켓 재판매</td><td>5.0%</td><td class="hl">2.5%</td><td>—</td></tr>
+              <tr><td>OTC</td><td>1.0%</td><td class="hl">0.5%</td><td>—</td></tr>
+            </tbody>
+          </table>
+
+          <div class="card-eyebrow mt">SOVE / USDC</div>
+          <div class="ob">
+            <div class="ob-row ask"><span>0.1245</span><span>12,400</span></div>
+            <div class="ob-row ask"><span>0.1242</span><span>8,200</span></div>
+            <div class="ob-row ask"><span>0.1240</span><span>5,100</span></div>
+            <div class="ob-mid">Mid 0.1236 · Spread 0.0008</div>
+            <div class="ob-row bid"><span>0.1232</span><span>6,800</span></div>
+            <div class="ob-row bid"><span>0.1230</span><span>14,200</span></div>
+            <div class="ob-row bid"><span>0.1228</span><span>9,500</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M3 -->
+    <div class="module-panel" id="m3">
+      <div class="mod-grid">
+        <div class="mod-info">
+          <div class="mod-no">03</div>
+          <h3>DeFi Hub</h3>
+          <p class="mod-lead">
+            보유한 자산이 곧 수익원이 됩니다. 4-Tier 스테이킹, 유동성 풀,
+            NFT 담보 대출, 보험 풀을 단일 인터페이스에서 제공합니다.
+          </p>
+
+          <h4>스테이킹 티어</h4>
+          <div class="tier-list">
+            <div class="tier"><div class="t-name">Bronze</div><div class="t-amt">1,000 SOVE</div><div class="t-apy">8 — 10%</div><div class="t-lock">30일</div></div>
+            <div class="tier"><div class="t-name">Silver</div><div class="t-amt">10,000 SOVE</div><div class="t-apy">10 — 12%</div><div class="t-lock">90일</div></div>
+            <div class="tier"><div class="t-name">Gold</div><div class="t-amt">50,000 SOVE</div><div class="t-apy">12 — 15%</div><div class="t-lock">180일</div></div>
+            <div class="tier"><div class="t-name">Sovereign</div><div class="t-amt">200,000 SOVE</div><div class="t-apy">15 — 18%</div><div class="t-lock">365일</div></div>
+          </div>
+        </div>
+
+        <div class="mod-card">
+          <div class="card-eyebrow">Liquidity Pools</div>
+          <div class="lp-list">
+            <div class="lp"><span class="lp-pair">SOVE / USDC</span><span class="lp-apy">15 — 25%</span><span class="lp-tag">Stable</span></div>
+            <div class="lp"><span class="lp-pair">SOVE / ETH</span><span class="lp-apy">20 — 30%</span><span class="lp-tag">Volatile</span></div>
+            <div class="lp"><span class="lp-pair">SOVE / GIWA</span><span class="lp-apy">25 — 35%</span><span class="lp-tag native">Native</span></div>
+          </div>
+
+          <div class="card-eyebrow mt">NFT 담보 대출</div>
+          <div class="kvr">
+            <div class="kvr-row"><span class="k">담보 자산</span><span class="v">ERC-721 NFT</span></div>
+            <div class="kvr-row"><span class="k">LTV</span><span class="v hl">30 — 50%</span></div>
+            <div class="kvr-row"><span class="k">이자율</span><span class="v">연 8 — 15%</span></div>
+            <div class="kvr-row"><span class="k">청산 기준</span><span class="v">LTV 70% 초과</span></div>
+            <div class="kvr-row"><span class="k">조기 상환</span><span class="v ok">수수료 없음</span></div>
+          </div>
+
+          <div class="card-eyebrow mt">Insurance Pool</div>
+          <div class="ins-box">
+            <span class="ins-rate">6 — 10%</span>
+            <span class="ins-desc">$SOVE 예치 · 실물 자산 훼손/분실 리스크 분담</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M4 -->
+    <div class="module-panel" id="m4">
+      <div class="mod-grid">
+        <div class="mod-info">
+          <div class="mod-no">04</div>
+          <h3>Ticket Center</h3>
+          <p class="mod-lead">
+            ERC-1155 기반 NFT 티켓. GIWA ID에 바인딩되어 암표가 원천적으로 차단되며,
+            공연 종료 후 기념 컬렉터블로 자동 전환됩니다.
+          </p>
+
+          <h4>암표 방지 메커니즘</h4>
+          <div class="block-list">
+            <div class="bl"><div class="bl-h">가격 상한선</div><div class="bl-d">기획사가 재판매 최고가 설정 (예: 원가의 150%)</div></div>
+            <div class="bl"><div class="bl-h">GIWA ID 바인딩</div><div class="bl-d">티켓 구매 시 SBT 연결, 1인 N매 제한</div></div>
+            <div class="bl"><div class="bl-h">전송 제한</div><div class="bl-d">공연 48시간 전부터 전송 및 재판매 차단</div></div>
+            <div class="bl"><div class="bl-h">본인 확인</div><div class="bl-d">체크인 시 QR 코드와 GIWA ID 일치 검증</div></div>
+            <div class="bl"><div class="bl-h">자동 로열티</div><div class="bl-d">재판매마다 아티스트에게 2% 자동 분배</div></div>
+          </div>
+        </div>
+
+        <div class="mod-card">
+          <div class="card-eyebrow">Sample Ticket</div>
+          <div class="ticket-title">IU Concert 2026</div>
+          <div class="ticket-place">서울 올림픽공원 체조경기장</div>
+          <div class="card-divider"></div>
+          <div class="ticket-rows">
+            <div class="row"><span class="k">Date</span><span class="v">2026.07.15 · 19:00</span></div>
+            <div class="row"><span class="k">Section</span><span class="v">VIP / A3</span></div>
+            <div class="row"><span class="k">Seat</span><span class="v">12 — 15</span></div>
+            <div class="row"><span class="k">Token ID</span><span class="v">#1027</span></div>
+            <div class="row"><span class="k">Bound to</span><span class="v">0x7a3f...be21</span></div>
+          </div>
+          <div class="card-divider"></div>
+          <div class="ticket-status">
+            <span class="status-dot"></span>
+            <span>Active · Transferable until 48h before event</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M5 -->
+    <div class="module-panel" id="m5">
+      <div class="mod-grid">
+        <div class="mod-info">
+          <div class="mod-no">05</div>
+          <h3>Admin Console</h3>
+          <p class="mod-lead">
+            자산, 사용자, 거래, 토큰 발행, 거버넌스 — 플랫폼 운영에 필요한 모든
+            지표와 도구를 단일 콘솔에서 통합 관리합니다.
+          </p>
+
+          <div class="mod-list">
+            <div class="ml-row"><span>Overview</span><span>실시간 KPI</span></div>
+            <div class="ml-row"><span>Asset Management</span><span>자산 등록 · 감정 · 수탁</span></div>
+            <div class="ml-row"><span>User Management</span><span>KYC · 티어 · GIWA ID</span></div>
+            <div class="ml-row"><span>Transaction Monitor</span><span>이상 거래 탐지</span></div>
+            <div class="ml-row"><span>Token Dashboard</span><span>Mint · Burn · 담보율</span></div>
+            <div class="ml-row"><span>Governance</span><span>제안 · 투표 · 집행</span></div>
+            <div class="ml-row"><span>Security</span><span>Multi-Sig · Timelock</span></div>
+            <div class="ml-row"><span>Reports</span><span>자동 생성 보고서</span></div>
+          </div>
+        </div>
+
+        <div class="mod-card">
+          <div class="card-eyebrow">Realtime KPI</div>
+          <div class="dash-grid">
+            <div class="dash-cell">
+              <div class="dc-label">24h Volume</div>
+              <div class="dc-value">$2.41M</div>
+              <div class="dc-delta up">+12.4%</div>
+            </div>
+            <div class="dash-cell">
+              <div class="dc-label">TVL</div>
+              <div class="dc-value">$18.7M</div>
+              <div class="dc-delta up">+3.1%</div>
+            </div>
+            <div class="dash-cell">
+              <div class="dc-label">NFTs Minted</div>
+              <div class="dc-value">1,284</div>
+              <div class="dc-delta up">+7</div>
+            </div>
+            <div class="dash-cell">
+              <div class="dc-label">$SOVE Price</div>
+              <div class="dc-value">$0.1238</div>
+              <div class="dc-delta down">−0.8%</div>
+            </div>
+            <div class="dash-cell">
+              <div class="dc-label">Collateral Ratio</div>
+              <div class="dc-value hl">154%</div>
+              <div class="dc-delta ok">Healthy</div>
+            </div>
+                    <div class="dash-cell">
+              <div class="dc-label">Dojang Status</div>
+              <div class="dc-value ok">Sealed</div>
+              <div class="dc-delta">2h ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOJANG -->
+<section class="dojang" id="dojang">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">04 — Trust Layer</div>
+      <h2 class="section-title">도장.<br/>오프체인을 온체인으로.</h2>
+      <p class="section-sub">
+        GIWA Dojang은 신뢰할 수 있는 오프체인 정보를 검증된 온체인 어테스테이션으로 발급하는
+        GIWA Chain의 네이티브 신뢰 레이어입니다. SOVE는 모든 실물 자산의 흐름을 도장으로 봉인합니다.
+      </p>
+    </div>
+
+    <div class="dojang-flow">
+      <div class="df-side">
+        <div class="df-label">Off-Chain</div>
+        <div class="df-items">
+          <div class="df-item">
+            <div class="df-h">감정기관</div>
+            <div class="df-d">USD 기준 감정가 산정 및 감정서 발급</div>
+          </div>
+          <div class="df-item">
+            <div class="df-h">수탁기관</div>
+            <div class="df-d">실물 보관 확인 및 보관 조건 검증</div>
+          </div>
+          <div class="df-item">
+            <div class="df-h">보험사</div>
+            <div class="df-d">감정가 110% 보험 증서 발행</div>
+          </div>
+          <div class="df-item">
+            <div class="df-h">Upbit KYC</div>
+            <div class="df-d">신원 확인 및 GIWA ID 인증</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="df-center">
+        <div class="df-stamp">
+          <div class="ds-text">GIWA</div>
+          <div class="ds-text">DOJANG</div>
+          <div class="ds-text">도장</div>
+        </div>
+        <div class="df-rays" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="df-caption">도장 어테스테이션 발급</div>
+      </div>
+
+      <div class="df-side">
+        <div class="df-label">On-Chain</div>
+        <div class="df-items">
+          <div class="df-item">
+            <div class="df-h">감정 도장</div>
+            <div class="df-d">감정가가 온체인에 영구 기록 · $SOVE Mint 트리거</div>
+          </div>
+          <div class="df-item">
+            <div class="df-h">수탁 도장</div>
+            <div class="df-d">실물-NFT 1:1 매칭 어테스테이션</div>
+          </div>
+          <div class="df-item">
+            <div class="df-h">보험 도장</div>
+            <div class="df-d">커버리지 한도와 유효기간 검증</div>
+          </div>
+          <div class="df-item">
+            <div class="df-h">신원 도장</div>
+            <div class="df-d">Verified Address SBT · KYC 자동 통과</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dojang-types">
+      <div class="dt-head">SOVE에서 발급되는 도장</div>
+      <div class="dt-grid">
+        <div class="dt">
+          <div class="dt-no">01</div>
+          <div class="dt-name">Appraisal Stamp</div>
+          <div class="dt-issuer">발급자 · 인증 감정기관</div>
+          <div class="dt-desc">감정가, 감정일, 감정기관 서명을 온체인에 기록</div>
+        </div>
+        <div class="dt">
+          <div class="dt-no">02</div>
+          <div class="dt-name">Custody Stamp</div>
+          <div class="dt-issuer">발급자 · 인증 수탁기관</div>
+          <div class="dt-desc">보관 위치, 보관 조건, 입고 시점 봉인</div>
+        </div>
+        <div class="dt">
+          <div class="dt-no">03</div>
+          <div class="dt-name">Insurance Stamp</div>
+          <div class="dt-issuer">발급자 · 보험사</div>
+          <div class="dt-desc">보험 증서 번호와 커버리지 검증 어테스테이션</div>
+        </div>
+        <div class="dt">
+          <div class="dt-no">04</div>
+          <div class="dt-name">Identity Stamp</div>
+          <div class="dt-issuer">발급자 · Upbit Korea</div>
+          <div class="dt-desc">GIWA Verified Address — KYC 완료 SBT</div>
+        </div>
+        <div class="dt">
+          <div class="dt-no">05</div>
+          <div class="dt-name">Redemption Stamp</div>
+          <div class="dt-issuer">발급자 · 수탁기관</div>
+          <div class="dt-desc">실물 출고 및 인도 완료 봉인</div>
+        </div>
+        <div class="dt">
+          <div class="dt-no">06</div>
+          <div class="dt-name">Re-Appraisal Stamp</div>
+          <div class="dt-issuer">발급자 · 감정 위원회</div>
+          <div class="dt-desc">연 1회 정기 재감정 · 시장가 보정</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dojang-cycle">
+      <div class="dc-row">
+        <div class="dc-step">
+          <div class="dc-step-no">01</div>
+          <div class="dc-step-name">실물 입고</div>
+          <div class="dc-step-d">감정 → 수탁 → 보험</div>
+        </div>
+        <div class="dc-sep">/</div>
+        <div class="dc-step">
+          <div class="dc-step-no">02</div>
+          <div class="dc-step-name">도장 발급</div>
+          <div class="dc-step-d">3종 도장이 GIWA Chain에 어테스테이션</div>
+        </div>
+        <div class="dc-sep">/</div>
+        <div class="dc-step">
+          <div class="dc-step-no">03</div>
+          <div class="dc-step-name">NFT 발행</div>
+          <div class="dc-step-d">도장 검증 후 $SOVE Mint</div>
+        </div>
+        <div class="dc-sep">/</div>
+        <div class="dc-step">
+          <div class="dc-step-no">04</div>
+          <div class="dc-step-name">반환 도장</div>
+          <div class="dc-step-d">실물 인도 시 봉인 해제 · NFT 소각</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOKEN -->
+<section class="token" id="token">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">05 — Token</div>
+      <h2 class="section-title">$SOVE.</h2>
+      <p class="section-sub">실물 자산의 감정 가치와 연동되어 발행 · 소각되는 코어 토큰</p>
+    </div>
+
+    <div class="token-grid">
+      <div class="token-card">
+        <div class="tc-no">01</div>
+        <h3>Mint</h3>
+        <p class="tc-lead">실물 자산 등록 시 감정가만큼 발행</p>
+        <div class="tc-formula">Mint = 감정가(USD) ÷ Ref Price</div>
+        <div class="tc-meta">담보율 ≥ 150% 시에만 허용</div>
+      </div>
+
+      <div class="token-card">
+        <div class="tc-no">02</div>
+        <h3>Burn</h3>
+        <p class="tc-lead">실물 반환과 거래 수수료에서 자동 소각</p>
+        <div class="tc-formula">반환 시 대응 Mint분 전량 소각</div>
+        <div class="tc-meta">거래 수수료의 30% 추가 소각</div>
+      </div>
+
+      <div class="token-card">
+        <div class="tc-no">03</div>
+        <h3>Governance</h3>
+        <p class="tc-lead">보유량 기반 의결권 행사</p>
+        <div class="tc-formula">Sovereign 티어 · DAO 투표권 부여</div>
+        <div class="tc-meta">Phase 4에서 완전 DAO 전환</div>
+      </div>
+    </div>
+
+    <div class="usecase">
+      <div class="uc-head">$SOVE 활용처</div>
+      <div class="uc-list">
+        <div class="uc"><span class="uc-no">01</span><span>수수료 결제 · 50% 할인</span></div>
+        <div class="uc"><span class="uc-no">02</span><span>NFT 직접 구매</span></div>
+        <div class="uc"><span class="uc-no">03</span><span>스테이킹 보상</span></div>
+        <div class="uc"><span class="uc-no">04</span><span>거버넌스 투표</span></div>
+        <div class="uc"><span class="uc-no">05</span><span>큐레이션 보상</span></div>
+        <div class="uc"><span class="uc-no">06</span><span>보험 풀 예치</span></div>
+        <div class="uc"><span class="uc-no">07</span><span>NFT 담보 대출 이자</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH -->
+<section class="tech" id="tech">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">06 — Technology</div>
+      <h2 class="section-title">엔터프라이즈 그레이드 스택.</h2>
+    </div>
+
+    <div class="tech-stack">
+      <div class="tech-layer">
+        <div class="tl-label">Frontend</div>
+        <div class="tl-items">
+          <span>Next.js</span>
+          <span>React Native</span>
+        </div>
+      </div>
+      <div class="tech-layer">
+        <div class="tl-label">API</div>
+        <div class="tl-items">
+          <span>REST</span>
+          <span>GraphQL</span>
+          <span>WebSocket</span>
+        </div>
+      </div>
+      <div class="tech-layer">
+        <div class="tl-label">Services</div>
+        <div class="tl-items">
+          <span>Auth</span><span>Market</span><span>Exchange</span><span>DeFi</span>
+          <span>Ticket</span><span>NFT</span><span>Oracle</span><span>Admin</span>
+        </div>
+      </div>
+      <div class="tech-layer">
+        <div class="tl-label">Blockchain</div>
+        <div class="tl-items">
+          <span class="emp">GIWA Chain L2</span>
+          <span>GIWA Dojang</span>
+          <span>GIWA ID · SBT</span>
+          <span>BOJAGI · ZKP</span>
+          <span>UP.ID Naming</span>
+          <span>IPFS</span>
+        </div>
+      </div>
+      <div class="tech-layer">
+        <div class="tl-label">Data</div>
+        <div class="tl-items">
+          <span>PostgreSQL</span><span>Redis</span><span>Elasticsearch</span><span>IPFS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contracts">
+      <div class="contracts-head">Smart Contracts</div>
+      <table class="contracts-table">
+        <thead>
+          <tr><th>Contract</th><th>Standard</th><th>Function</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SOVEToken</td><td>ERC-20</td><td>Mint · Burn · 접근 제어</td><td><span class="pri pri-c">Critical</span></td></tr>
+          <tr><td>SOVEMinter</td><td>Custom</td><td>도장 검증 후 Mint · 담보율 체크</td><td><span class="pri pri-c">Critical</span></td></tr>
+          <tr><td>DojangVerifier</td><td>Custom</td><td>도장 어테스테이션 온체인 검증</td><td><span class="pri pri-c">Critical</span></td></tr>
+          <tr><td>SOVEArtNFT</td><td>ERC-721</td><td>유일 예술품 발행 및 반환</td><td><span class="pri pri-c">Critical</span></td></tr>
+          <tr><td>SOVEEditionNFT</td><td>ERC-1155</td><td>에디션 · 티켓 · 컬렉터블</td><td><span class="pri pri-c">Critical</span></td></tr>
+          <tr><td>SOVEExchange</td><td>Custom</td><td>Orderbook · AMM 거래 로직</td><td><span class="pri pri-c">Critical</span></td></tr>
+          <tr><td>RedemptionManager</td><td>Custom</td><td>실물 반환 프로세스</td><td><span class="pri pri-c">Critical</span></td></tr>
+          <tr><td>SOVEStaking</td><td>Custom</td><td>4-Tier 스테이킹</td><td><span class="pri pri-h">High</span></td></tr>
+          <tr><td>SOVEGovernance</td><td>DAO</td><td>투표 · 제안 · 집행</td><td><span class="pri pri-h">High</span></td></tr>
+          <tr><td>FeeDistributor</td><td>Custom</td><td>수수료 자동 배분</td><td><span class="pri pri-h">High</span></td></tr>
+          <tr><td>MultiSigWallet</td><td>Gnosis Safe</td><td>재단 자금 4-of-7</td><td><span class="pri pri-c">Critical</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="security" id="security">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">07 — Security</div>
+      <h2 class="section-title">신뢰는 설계에서.</h2>
+    </div>
+
+    <div class="sec-grid">
+      <div class="sec-card">
+        <div class="sc-no">01</div>
+        <h3>Smart Contract Audit</h3>
+        <p>CertiK와 Hacken의 이중 감사, HackenProof 버그바운티 상시 운영</p>
+      </div>
+      <div class="sec-card">
+        <div class="sc-no">02</div>
+        <h3>Custody</h3>
+        <p>인증 수탁기관 보관, 감정가 110% 보험 의무, 월간 실사</p>
+      </div>
+      <div class="sec-card">
+        <div class="sc-no">03</div>
+        <h3>GIWA Dojang</h3>
+        <p>오프체인 정보를 도장 어테스테이션으로 발급, NFT와 실물의 1:1 매칭 영구 봉인</p>
+      </div>
+      <div class="sec-card">
+        <div class="sc-no">04</div>
+        <h3>Treasury</h3>
+        <p>Gnosis Safe Multi-Sig 4-of-7, 모든 집행에 48 — 72시간 Timelock</p>
+      </div>
+      <div class="sec-card">
+        <div class="sc-no">05</div>
+        <h3>Privacy</h3>
+        <p>GIWA BOJAGI 프로토콜의 ZKP로 고액 거래 정보 보호</p>
+      </div>
+      <div class="sec-card">
+        <div class="sc-no">06</div>
+        <h3>KYC · AML</h3>
+        <p>Upbit 발급 Identity Stamp(Verified Address) 보유 시 자동 KYC, 거래 규모별 검증 등급 차등</p>
+      </div>
+    </div>
+
+    <div class="transparency">
+      <div class="trans-head">Public Transparency</div>
+      <p class="trans-sub">플랫폼의 모든 핵심 지표를 누구나 실시간으로 검증할 수 있습니다</p>
+      <div class="trans-grid">
+        <div class="trans-item">총 발행 NFT 수</div>
+        <div class="trans-item">수탁 자산 총 감정가</div>
+        <div class="trans-item">활성 도장 어테스테이션</div>
+        <div class="trans-item">도장 발급 이력</div>
+        <div class="trans-item">$SOVE 유통량 · Mint · Burn</div>
+        <div class="trans-item">담보율 실시간</div>
+        <div class="trans-item">수수료 수익 누적</div>
+        <div class="trans-item">스테이킹 TVL</div>
+        <div class="trans-item">보험 풀 잔액</div>
+        <div class="trans-item">Multi-Sig 활동 로그</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="roadmap" id="roadmap">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">08 — Roadmap</div>
+      <h2 class="section-title">2026 — 2028.</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-marker active">P1</div>
+        <div class="tl-body">
+          <div class="tl-phase">Foundation</div>
+          <div class="tl-date">2026 Q2 — Q3</div>
+          <ul>
+            <li>핵심 스마트 컨트랙트 10종 개발 및 이중 감사</li>
+            <li>$SOVE TGE 및 GIWA Chain 메인넷 배포</li>
+            <li>NFT Marketplace MVP 출시</li>
+            <li>글로벌 아티스트 작품 10점 파일럿</li>
+            <li>Admin Console 기본 운영 도구</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-marker">P2</div>
+        <div class="tl-body">
+          <div class="tl-phase">Growth</div>
+          <div class="tl-date">2026 Q4 — 2027 Q1</div>
+          <ul>
+            <li>Ticket Center 공연 NFT 발행 및 거래</li>
+            <li>Orderbook · AMM 하이브리드 DEX 확장</li>
+            <li>DeFi Hub 4-Tier 스테이킹 및 LP</li>
+            <li>글로벌 감정기관 3개사 이상 제휴</li>
+            <li>iOS · Android 네이티브 앱</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-marker">P3</div>
+        <div class="tl-body">
+          <div class="tl-phase">Expansion</div>
+          <div class="tl-date">2027 Q2 — Q3</div>
+          <ul>
+            <li>컬렉터블 NFT 브랜드 파트너십 확장</li>
+            <li>Upbit 상장 및 글로벌 CEX 확장</li>
+            <li>NFT 담보 대출 및 보험 풀 출시</li>
+            <li>유럽 · 미국 · 아시아 갤러리 제휴</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-marker">P4</div>
+        <div class="tl-body">
+          <div class="tl-phase">Maturity</div>
+          <div class="tl-date">2027 Q4 — 2028</div>
+          <ul>
+            <li>거버넌스 완전 DAO 전환</li>
+            <li>법정화폐 · 스테이블코인 결제 확장</li>
+            <li>실물 자산 대상 보험 상품 출시</li>
+            <li>문화예술 전문 글로벌 거래소 완성</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KPI -->
+<section class="kpi" id="kpi">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">09 — Targets</div>
+      <h2 class="section-title">측정 가능한 성장.</h2>
+    </div>
+
+    <table class="kpi-table">
+      <thead>
+        <tr><th>지표</th><th>Phase 1</th><th>Phase 2</th><th>Phase 3</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>등록 자산 수</td><td>10</td><td>100</td><td class="hl">1,000</td></tr>
+        <tr><td>총 자산 감정가</td><td>$5M</td><td>$50M</td><td class="hl">$500M</td></tr>
+        <tr><td>월간 거래량</td><td>$500K</td><td>$10M</td><td class="hl">$100M</td></tr>
+        <tr><td>활성 사용자 (MAU)</td><td>1,000</td><td>10,000</td><td class="hl">100,000</td></tr>
+        <tr><td>스테이킹 TVL</td><td>$1M</td><td>$20M</td><td class="hl">$200M</td></tr>
+        <tr><td>$SOVE 누적 Burn</td><td>5M</td><td>100M</td><td class="hl">1B</td></tr>
+        <tr><td>파트너 감정기관</td><td>1</td><td>3</td><td class="hl">10</td></tr>
+        <tr><td>파트너 수탁기관</td><td>1</td><td>3</td><td class="hl">5</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ops-head">Operational SLA</div>
+    <div class="ops-grid">
+      <div class="ops"><div class="ops-v">99.9<span>%</span></div><div class="ops-l">Dojang Success</div></div>
+      <div class="ops"><div class="ops-v">99.95<span>%</span></div><div class="ops-l">Uptime</div></div>
+      <div class="ops"><div class="ops-v">≤3<span>s</span></div><div class="ops-l">Settlement</div></div>
+      <div class="ops"><div class="ops-v">≤2<span>h</span></div><div class="ops-l">Support</div></div>
+      <div class="ops"><div class="ops-v">100<span>%</span></div><div class="ops-l">Collateral</div></div>
+      <div class="ops"><div class="ops-v">90<span>/100</span></div><div class="ops-l">Security Score</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="launch">
+  <div class="container">
+    <div class="cta-card">
+      <div class="eyebrow">Get Started</div>
+      <h2>지금, 문화의 소유권을 시작하세요.</h2>
+      <p>업비트 GIWA ID로 즉시 KYC 완료 · 첫 거래까지 60초.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary btn-lg">Launch Platform</a>
+        <a href="#whitepaper" class="btn btn-outline btn-lg">Whitepaper</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand brand-foot">
+          <span class="brand-name">SOVE</span>
+        </div>
+        <p>Sovereign Value Economy<br/>Powered by GIWA Chain · Ethereum L2</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Platform</h4>
+          <a href="#modules">NFT Marketplace</a>
+          <a href="#modules">SOVE Exchange</a>
+          <a href="#modules">DeFi Hub</a>
+          <a href="#modules">Ticket Center</a>
+        </div>
+        <div class="foot-col">
+          <h4>Token</h4>
+          <a href="#token">Economics</a>
+          <a href="#token">Staking</a>
+          <a href="#kpi">Transparency</a>
+          <a href="#security">Audit</a>
+        </div>
+        <div class="foot-col">
+          <h4>Resources</h4>
+          <a href="#whitepaper">Whitepaper</a>
+          <a href="#">Technical Docs</a>
+          <a href="#">GIWA Docs</a>
+          <a href="#dojang">Dojang Reference</a>
+        </div>
+        <div class="foot-col">
+          <h4>Community</h4>
+          <a href="#">Twitter</a>
+          <a href="#">Discord</a>
+          <a href="#">Telegram</a>
+          <a href="#">Medium</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 SOVE Foundation</div>
+      <div class="foot-meta">
+        <span>v1.0</span>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Risk Disclosure</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
