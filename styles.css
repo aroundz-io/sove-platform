@@ -74,7 +74,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: 'ss01', 'ss02';
+  /* 한글 어절 단위 줄바꿈 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
+
+/* 영문/코드/숫자가 주인 영역은 일반 줄바꿈 */
+code,
+.ob,
+.fee-table,
+.kpi-table,
+.contracts-table,
+.hc-time,
+.hc-amount,
+.hc-delta,
+.hc-it-val,
+.hc-it-d,
+.tl-date,
+.dc-value,
+.dc-delta,
+.eyebrow,
+.tl-label,
+.arch-label,
+.df-label,
+.brand-name,
+.trust-logo {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+/* 줄바꿈 방지 헬퍼 — 단어와 조사/단위가 떨어지지 않게 */
+.nobr { white-space: nowrap; }
 
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
