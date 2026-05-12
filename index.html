@@ -28,8 +28,6 @@
       <a href="#modules">Platform</a>
       <a href="#dojang">Dojang</a>
       <a href="#token">Token</a>
-      <a href="#tech">Technology</a>
-      <a href="#security">Security</a>
     </nav>
     <div class="nav-cta">
       <a href="#whitepaper" class="btn btn-ghost">Whitepaper</a>
@@ -678,140 +676,6 @@
   </div>
 </section>
 
-<!-- TECH -->
-<section class="tech" id="tech">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">05 — Technology</div>
-      <h2 class="section-title">엔터프라이즈 그레이드 스택.</h2>
-    </div>
-
-    <div class="tech-stack">
-      <div class="tech-layer">
-        <div class="tl-label">Frontend</div>
-        <div class="tl-items">
-          <span>Next.js</span>
-          <span>React Native</span>
-        </div>
-      </div>
-      <div class="tech-layer">
-        <div class="tl-label">API</div>
-        <div class="tl-items">
-          <span>REST</span>
-          <span>GraphQL</span>
-          <span>WebSocket</span>
-        </div>
-      </div>
-      <div class="tech-layer">
-        <div class="tl-label">Services</div>
-        <div class="tl-items">
-          <span>Auth</span><span>Market</span><span>Exchange</span><span>DeFi</span>
-          <span>Ticket</span><span>NFT</span><span>Oracle</span><span>Admin</span>
-        </div>
-      </div>
-      <div class="tech-layer">
-        <div class="tl-label">Blockchain</div>
-        <div class="tl-items">
-          <span class="emp"><span class="nobr">GIWA Chain</span> L2</span>
-          <span><span class="nobr">GIWA Dojang</span></span>
-          <span><span class="nobr">GIWA ID</span> · SBT</span>
-          <span>BOJAGI · ZKP</span>
-          <span>UP.ID Naming</span>
-          <span>IPFS</span>
-        </div>
-      </div>
-      <div class="tech-layer">
-        <div class="tl-label">Data</div>
-        <div class="tl-items">
-          <span>PostgreSQL</span><span>Redis</span><span>Elasticsearch</span><span>IPFS</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="contracts">
-      <div class="contracts-head">Smart Contracts</div>
-      <table class="contracts-table">
-        <thead>
-          <tr><th>Contract</th><th>Standard</th><th>Function</th><th>Priority</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>SOVEToken</td><td>ERC-20</td><td>Mint · Burn · 접근 제어</td><td><span class="pri pri-c">Critical</span></td></tr>
-          <tr><td>SOVEMinter</td><td>Custom</td><td>도장 검증 후 Mint · 담보율 체크</td><td><span class="pri pri-c">Critical</span></td></tr>
-          <tr><td>DojangVerifier</td><td>Custom</td><td>도장 어테스테이션 온체인 검증</td><td><span class="pri pri-c">Critical</span></td></tr>
-          <tr><td>SOVEArtNFT</td><td>ERC-721</td><td>유일 예술품 발행 및 반환</td><td><span class="pri pri-c">Critical</span></td></tr>
-          <tr><td>SOVEEditionNFT</td><td>ERC-1155</td><td>에디션 · 티켓 · 컬렉터블</td><td><span class="pri pri-c">Critical</span></td></tr>
-          <tr><td>SOVEExchange</td><td>Custom</td><td>Orderbook · AMM 거래 로직</td><td><span class="pri pri-c">Critical</span></td></tr>
-          <tr><td>RedemptionManager</td><td>Custom</td><td>실물 반환 프로세스</td><td><span class="pri pri-c">Critical</span></td></tr>
-          <tr><td>SOVEStaking</td><td>Custom</td><td>4-Tier 스테이킹</td><td><span class="pri pri-h">High</span></td></tr>
-          <tr><td>SOVEGovernance</td><td>DAO</td><td>투표 · 제안 · 집행</td><td><span class="pri pri-h">High</span></td></tr>
-          <tr><td>FeeDistributor</td><td>Custom</td><td>수수료 자동 배분</td><td><span class="pri pri-h">High</span></td></tr>
-          <tr><td>MultiSigWallet</td><td>Gnosis Safe</td><td>재단 자금 4-of-7</td><td><span class="pri pri-c">Critical</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- SECURITY -->
-<section class="security" id="security">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">06 — Security</div>
-      <h2 class="section-title">신뢰는 설계에서.</h2>
-    </div>
-
-    <div class="sec-grid">
-      <div class="sec-card">
-        <div class="sc-no">01</div>
-        <h3>Smart Contract Audit</h3>
-        <p>CertiK와 Hacken의 이중 감사, HackenProof 버그바운티 상시 운영</p>
-      </div>
-      <div class="sec-card">
-        <div class="sc-no">02</div>
-        <h3>Custody</h3>
-        <p>인증 수탁기관 보관, 감정가 110% 보험 의무, 월간 실사</p>
-      </div>
-      <div class="sec-card">
-        <div class="sc-no">03</div>
-        <h3><span class="nobr">GIWA Dojang</span></h3>
-        <p>오프체인 정보를 도장 어테스테이션으로 발급, NFT와 실물의 1:1 매칭 영구 봉인</p>
-      </div>
-      <div class="sec-card">
-        <div class="sc-no">04</div>
-        <h3>Treasury</h3>
-        <p>Gnosis Safe Multi-Sig 4-of-7, 모든 집행에 48 — 72시간 Timelock</p>
-      </div>
-      <div class="sec-card">
-        <div class="sc-no">05</div>
-        <h3>Privacy</h3>
-        <p>GIWA BOJAGI 프로토콜의 ZKP로 고액 거래 정보 보호</p>
-      </div>
-      <div class="sec-card">
-        <div class="sc-no">06</div>
-        <h3>KYC · AML</h3>
-        <p>Upbit 발급 Identity Stamp(Verified Address) 보유 시 자동 KYC, 거래 규모별 검증 등급 차등</p>
-      </div>
-    </div>
-
-    <div class="transparency">
-      <div class="trans-head">Public Transparency</div>
-      <p class="trans-sub">플랫폼의 모든 핵심 지표를 누구나 실시간으로 검증할 수 있습니다</p>
-      <div class="trans-grid">
-        <div class="trans-item">총 발행 NFT 수</div>
-        <div class="trans-item">수탁 자산 총 감정가</div>
-        <div class="trans-item">활성 도장 어테스테이션</div>
-        <div class="trans-item">도장 발급 이력</div>
-        <div class="trans-item">$SOVE 유통량 · Mint · Burn</div>
-        <div class="trans-item">담보율 실시간</div>
-        <div class="trans-item">수수료 수익 누적</div>
-        <div class="trans-item">스테이킹 TVL</div>
-        <div class="trans-item">보험 풀 잔액</div>
-        <div class="trans-item">Multi-Sig 활동 로그</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
@@ -834,8 +698,8 @@
           <h4>Token</h4>
           <a href="#token">Economics</a>
           <a href="#token">Staking</a>
-          <a href="#security">Transparency</a>
-          <a href="#security">Audit</a>
+          <a href="#token">Governance</a>
+          <a href="#dojang">Dojang</a>
         </div>
         <div class="foot-col">
           <h4>Resources</h4>
