@@ -24,6 +24,24 @@
   const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
   function updateActiveNav() {
+    // Detect if nav is page-based (e.g. about.html) or anchor-based (#about)
+    const pageLinks = navLinks.some(a => {
+      const h = a.getAttribute('href') || '';
+      return h && !h.startsWith('#') && !h.startsWith('http');
+    });
+
+    if (pageLinks) {
+      // Page-based nav: set active from window.location.pathname
+      const cur = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+      navLinks.forEach(a => {
+        const h = (a.getAttribute('href') || '').toLowerCase();
+        a.classList.toggle('active', h === cur || (cur === '' && h === 'index.html'));
+      });
+      return;
+    }
+
+    if (sectionEls.length === 0) return;
+
     const y = window.scrollY + 120;
     let activeId = sectionIds[0];
     for (const el of sectionEls) {

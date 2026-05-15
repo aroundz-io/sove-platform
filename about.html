@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — SOVE</title>
+<meta name="description" content="SOVE는 예술품·티켓·컬렉터블의 실물 가치를 GIWA Chain 위에서 토큰화하는 RWA 통합 플랫폼입니다." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="wallet.css" />
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-name">SOVE</span></a>
+    <nav class="nav-links">
+      <a href="about.html" class="active">About</a>
+      <a href="platform.html">Platform</a>
+      <a href="dojang.html">Dojang</a>
+      <a href="token.html">Token</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#whitepaper" class="btn btn-ghost">Whitepaper</a>
+      <button type="button" class="btn btn-primary" data-sove-connect>Connect Wallet</button>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+  </div>
+  <div class="container page-hero-content">
+    <div class="eyebrow">About SOVE</div>
+    <h1 class="page-title">
+      문화 자산을 위한<br/>
+      <span class="hl">Sovereign Value Economy</span>.
+    </h1>
+    <p class="page-lead">
+      예술품, 공연 티켓, 한정판 컬렉터블 — 모든 문화 자산의 실물 가치를 토큰화하고
+      자체 거래소에서 거래할 수 있는 RWA 통합 플랫폼.
+      <span class="nobr">GIWA Chain</span>의 도장(Dojang) 기술로 오프체인과 온체인을 연결합니다.
+    </p>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="about" id="vision">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">01 — Vision</div>
+      <h2 class="section-title">문화를 소유하고,<br/>가치를 거래하다.</h2>
+    </div>
+
+    <div class="about-grid">
+      <p class="about-lead">
+        SOVE는 예술품, 공연 티켓, 한정판 컬렉터블을
+        블록체인에 토큰화하고 자체 거래소에서 거래할 수 있게 하는
+        RWA 통합 플랫폼입니다.
+      </p>
+      <p class="about-body">
+        높은 진입 장벽, 부족한 유동성, 불투명한 소유권 —
+        문화예술 시장이 오랜 시간 안고 있던 문제를
+        <span class="nobr">GIWA Chain</span>의 기술과 표준화된 감정·수탁 프로세스로 해결합니다.
+        실물반환청구권 NFT와 실물가치 연동형 $SOVE 토큰이
+        이 모든 거래의 근간이 됩니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section class="about" id="background" style="background: var(--bg-1);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">02 — Background</div>
+      <h2 class="section-title">왜 지금, RWA인가.</h2>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="p-num">01</div>
+        <div class="p-title">진입 장벽</div>
+        <div class="p-desc">고가 예술품 시장은 기관과 소수 컬렉터에게만 열려 있어, 일반 투자자의 접근이 거의 불가능합니다.</div>
+      </div>
+      <div class="principle">
+        <div class="p-num">02</div>
+        <div class="p-title">유동성 부족</div>
+        <div class="p-desc">한 번 구매한 작품을 매도하려면 옥션 사이클을 기다려야 하며 대형 갤러리 외에는 거래가 어렵습니다.</div>
+      </div>
+      <div class="principle">
+        <div class="p-num">03</div>
+        <div class="p-title">소유권 불투명</div>
+        <div class="p-desc">위작 시비, Provenance(이력) 분실, 진위 검증 비용 — 모두 시장 신뢰를 갉아먹는 구조적 요인입니다.</div>
+      </div>
+      <div class="principle">
+        <div class="p-num">04</div>
+        <div class="p-title">창작자 보상</div>
+        <div class="p-desc">2차 시장에서 발생하는 가치 상승의 대부분이 컬렉터와 중개업자에게 돌아가며, 창작자에게는 이르지 못합니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="audience" id="audience">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">03 — Who We Serve</div>
+      <h2 class="section-title">하나의 인프라,<br/>일곱 개의 시장.</h2>
+      <p class="section-sub">
+        SOVE는 문화예술 생태계의 모든 참여자에게 새로운 기회를 제공합니다.
+        창작자에서 기관 투자자까지 — 한 플랫폼 위에서 만나는 글로벌 마켓플레이스입니다.
+      </p>
+    </div>
+
+    <div class="aud-list">
+      <div class="aud-row">
+        <div class="aud-no">01</div>
+        <div class="aud-name">아트 컬렉터</div>
+        <div class="aud-need">유동성, 진위 검증, 합리적 수수료. 보유 자산을 담보로 한 NFT-Fi 대출.</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">02</div>
+        <div class="aud-name">신규 투자자</div>
+        <div class="aud-need">낮은 진입 장벽, 분산된 수익 기회. 에디션 NFT로 소액 분할 투자.</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">03</div>
+        <div class="aud-name">창작자 · 아티스트</div>
+        <div class="aud-need">자동 로열티(2차 거래마다 10%), 글로벌 판매 채널, 작품 출처 영구 기록.</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">04</div>
+        <div class="aud-name">공연 기획사</div>
+        <div class="aud-need">암표 방지, 2차 거래 수수료 확보, 공연 후 기념 컬렉터블 자동 발행.</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">05</div>
+        <div class="aud-name">컬렉터블 브랜드</div>
+        <div class="aud-need">진품 인증, 리세일 마켓 확보, 한정판 시리즈 발행 및 추적.</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">06</div>
+        <div class="aud-name">DeFi 참여자</div>
+        <div class="aud-need">스테이킹(8 — 18% APY), 유동성 풀(15 — 35% APY), NFT 담보 대출, 보험 풀 예치.</div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-no">07</div>
+        <div class="aud-name">기관 투자자</div>
+        <div class="aud-need">OTC(에스크로 컨트랙트), 대량 거래 수수료 1%, 인증 수탁기관 보관 신뢰.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="about" id="principles" style="background: var(--bg-1);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">04 — Principles</div>
+      <h2 class="section-title">SOVE를 작동시키는<br/>네 가지 원칙.</h2>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="p-num">01</div>
+        <div class="p-title">도장 검증</div>
+        <div class="p-desc">감정기관·수탁기관·보험사·KYC 인증사가 발급하는 6종 도장(Dojang)으로 모든 오프체인 정보를 온체인 어테스테이션화합니다.</div>
+      </div>
+      <div class="principle">
+        <div class="p-num">02</div>
+        <div class="p-title">유동성 우선</div>
+        <div class="p-desc">Orderbook과 AMM을 결합한 하이브리드 거래 엔진과 Smart Order Router가 항상 최적 가격을 자동 매칭합니다.</div>
+      </div>
+      <div class="principle">
+        <div class="p-num">03</div>
+        <div class="p-title">실물 반환권</div>
+        <div class="p-desc">NFT는 단순한 디지털 자산이 아닙니다. 보유자는 언제든 NFT를 소각하고 실물 자산을 인도받을 권리를 행사할 수 있습니다.</div>
+      </div>
+      <div class="principle">
+        <div class="p-num">04</div>
+        <div class="p-title">자동 로열티</div>
+        <div class="p-desc">2차 거래마다 스마트 컨트랙트가 창작자에게 1 — 3%의 로열티를 자동 분배합니다. 모든 거래는 컨트랙트로 강제됩니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="about" id="differentiators">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">05 — Differentiators</div>
+      <h2 class="section-title">SOVE가 다른 이유.</h2>
+    </div>
+
+    <div class="diff-list">
+      <div class="diff-row">
+        <div class="diff-tag">vs 일반 NFT 마켓</div>
+        <div class="diff-text">대부분의 NFT 마켓은 디지털 자산만 다룹니다. SOVE는 실물 자산을 감정·수탁·보험 후 토큰화하며, 모든 NFT는 실물 반환권을 보장합니다.</div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-tag">vs 전통 옥션</div>
+        <div class="diff-text">크리스티·소더비의 옥션은 사이클당 한 번, 수수료 25%. SOVE는 상시 거래, 2.5% 수수료(SOVE 결제 시 1.25%)이며 글로벌 24/7 운영됩니다.</div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-tag">vs 다른 RWA 프로토콜</div>
+        <div class="diff-text">대부분의 RWA는 부동산·채권에 집중합니다. SOVE는 문화 자산 카테고리에 특화하여 작가별·장르별·시리즈별 세분화된 큐레이션을 제공합니다.</div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-tag">vs Chainlink Oracle</div>
+        <div class="diff-text">Chainlink는 가격 피드 중심입니다. <span class="nobr">GIWA Dojang</span>은 자산 단위로 발급되는 어테스테이션으로 — 감정가, 수탁 위치, 보험 증서, KYC가 모두 도장으로 봉인됩니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDATION -->
+<section class="about" id="foundation" style="background: var(--bg-1);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">06 — Foundation</div>
+      <h2 class="section-title">SOVE Foundation.</h2>
+      <p class="section-sub">
+        SOVE Foundation은 비영리 재단으로 플랫폼의 장기 운영, 토큰 거버넌스, 보안 감사,
+        파트너십 관리를 담당합니다. 4-of-7 Multi-Sig로 모든 재단 자금을 집행합니다.
+      </p>
+    </div>
+
+    <div class="kvr">
+      <div class="kvr-row"><span class="k">Legal Structure</span><span class="v">싱가포르 비영리 재단</span></div>
+      <div class="kvr-row"><span class="k">Treasury</span><span class="v">Gnosis Safe Multi-Sig 4-of-7</span></div>
+      <div class="kvr-row"><span class="k">Timelock</span><span class="v">모든 집행 48 — 72시간 지연</span></div>
+      <div class="kvr-row"><span class="k">Audit Partners</span><span class="v">CertiK · Hacken</span></div>
+      <div class="kvr-row"><span class="k">Custody Partners</span><span class="v">Freeport SG · 인증 수탁기관</span></div>
+      <div class="kvr-row"><span class="k">Appraisal Partners</span><span class="v">Christie's · Sotheby's 인증</span></div>
+      <div class="kvr-row"><span class="k">Governance</span><span class="v">Phase 4까지 완전 DAO 전환</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand brand-foot"><span class="brand-name">SOVE</span></div>
+        <p>Sovereign Value Economy<br/>Powered by <span class="nobr">GIWA Chain</span> · <span class="nobr">Ethereum L2</span></p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Platform</h4>
+          <a href="platform.html#nft">NFT Marketplace</a>
+          <a href="platform.html#exchange">SOVE Exchange</a>
+          <a href="platform.html#defi">DeFi Hub</a>
+          <a href="platform.html#ticket">Ticket Center</a>
+        </div>
+        <div class="foot-col">
+          <h4>Token</h4>
+          <a href="token.html#economics">Economics</a>
+          <a href="token.html#staking">Staking</a>
+          <a href="token.html#governance">Governance</a>
+          <a href="dojang.html">Dojang</a>
+        </div>
+        <div class="foot-col">
+          <h4>Resources</h4>
+          <a href="#whitepaper">Whitepaper</a>
+          <a href="#">Technical Docs</a>
+          <a href="#">GIWA Docs</a>
+          <a href="dojang.html">Dojang Reference</a>
+        </div>
+        <div class="foot-col">
+          <h4>Community</h4>
+          <a href="#">Twitter</a>
+          <a href="#">Discord</a>
+          <a href="#">Telegram</a>
+          <a href="#">Medium</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 SOVE Foundation</div>
+      <div class="foot-meta">
+        <span>v1.0</span>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Risk Disclosure</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js?v=2"></script>
+<script src="wallet.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Token — SOVE</title>
+<meta name="description" content="$SOVE는 실물 자산의 감정 가치와 연동되어 발행·소각되는 코어 토큰입니다. Mint, Burn, Governance, 4-Tier Staking까지." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="wallet.css" />
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-name">SOVE</span></a>
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="platform.html">Platform</a>
+      <a href="dojang.html">Dojang</a>
+      <a href="token.html" class="active">Token</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#whitepaper" class="btn btn-ghost">Whitepaper</a>
+      <button type="button" class="btn btn-primary" data-sove-connect>Connect Wallet</button>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+  </div>
+  <div class="container page-hero-content">
+    <div class="eyebrow">Token</div>
+    <h1 class="page-title">
+      <span class="hl">$SOVE</span>.<br/>
+      실물 가치 연동 토큰.
+    </h1>
+    <p class="page-lead">
+      $SOVE는 SOVE 플랫폼의 코어 토큰입니다.
+      실물 자산의 감정가에 따라 발행되며, 반환·거래 수수료에서 자동 소각되는 디플레이션 메커니즘을 가집니다.
+      모든 발행과 소각은 도장 어테스테이션을 통해 검증됩니다.
+    </p>
+  </div>
+</section>
+
+<!-- TOKEN OVERVIEW -->
+<section class="about" id="economics">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">01 — Economics</div>
+      <h2 class="section-title">Mint · Burn · Governance.</h2>
+      <p class="section-sub">
+        $SOVE는 무한 발행이 아닙니다. 실물 자산 1개가 등록될 때만 정해진 양만큼 발행되며,
+        반환·소각 사이클을 통해 시장에 유통되는 양이 조정됩니다.
+      </p>
+    </div>
+
+    <div class="token-grid">
+      <div class="token-card">
+        <div class="tc-no">01 — Mint</div>
+        <h3>발행</h3>
+        <p class="tc-lead">실물 자산 등록 시 감정가만큼 발행됩니다.</p>
+        <div class="tc-formula">Mint = 감정가(USD) ÷ Ref Price</div>
+        <div class="tc-meta">담보율 ≥ 150% 시에만 허용 · DojangVerifier 검증 후 SOVEMinter가 실행</div>
+      </div>
+
+      <div class="token-card">
+        <div class="tc-no">02 — Burn</div>
+        <h3>소각</h3>
+        <p class="tc-lead">실물 반환과 거래 수수료에서 자동 소각됩니다.</p>
+        <div class="tc-formula">반환 시 대응 Mint분 전량 소각</div>
+        <div class="tc-meta">거래 수수료의 30%가 추가로 자동 소각 · 디플레이션 메커니즘</div>
+      </div>
+
+      <div class="token-card">
+        <div class="tc-no">03 — Governance</div>
+        <h3>거버넌스</h3>
+        <p class="tc-lead">보유량 기반 의결권 행사.</p>
+        <div class="tc-formula">Sovereign 티어 · DAO 투표권 부여</div>
+        <div class="tc-meta">Phase 4까지 완전 DAO 전환 · 모든 파라미터 변경에 거버넌스 필요</div>
+      </div>
+    </div>
+
+    <h3 class="sub-h">Mint / Burn 예시</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>이벤트</th><th>조건</th><th>계산</th><th>결과</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>NFT 발행</td>
+          <td>감정가 $500K, Ref Price $0.10</td>
+          <td>500,000 ÷ 0.10</td>
+          <td class="hl">+5,000,000 SOVE Mint</td>
+        </tr>
+        <tr>
+          <td>실물 반환</td>
+          <td>위 NFT 반환 청구</td>
+          <td>대응 Mint분 전량</td>
+          <td class="hl">−5,000,000 SOVE Burn</td>
+        </tr>
+        <tr>
+          <td>거래 수수료</td>
+          <td>수수료 10,000 SOVE 발생</td>
+          <td>10,000 × 30%</td>
+          <td class="hl">−3,000 SOVE Burn</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CIRCULATION FLOW -->
+<section class="about" id="circulation" style="background: var(--bg-1);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">02 — Circulation</div>
+      <h2 class="section-title">토큰이 흐르는 길.</h2>
+    </div>
+
+    <div class="circ-diagram">
+      <div class="cd-row">
+        <div class="cd-node primary">
+          <div class="cd-no">01</div>
+          <div class="cd-name">실물 자산</div>
+          <div class="cd-d">감정 + 수탁 + 보험</div>
+        </div>
+        <div class="cd-arrow">→</div>
+        <div class="cd-node">
+          <div class="cd-no">02</div>
+          <div class="cd-name">NFT 발행</div>
+          <div class="cd-d">+ $SOVE Mint</div>
+        </div>
+        <div class="cd-arrow">→</div>
+        <div class="cd-node">
+          <div class="cd-no">03</div>
+          <div class="cd-name">SOVE Exchange</div>
+          <div class="cd-d">거래 발생</div>
+        </div>
+        <div class="cd-arrow">→</div>
+        <div class="cd-node danger">
+          <div class="cd-no">04</div>
+          <div class="cd-name">수수료 발생</div>
+          <div class="cd-d">자동 분배</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-h">수수료 자동 분배</h3>
+    <div class="alloc">
+      <div class="alloc-row"><span class="alloc-pct">40%</span><span class="alloc-name">SOVE Foundation 운영</span><span class="alloc-bar"><span style="width:40%"></span></span></div>
+      <div class="alloc-row"><span class="alloc-pct">30%</span><span class="alloc-name">$SOVE 자동 Burn</span><span class="alloc-bar"><span style="width:30%"></span></span></div>
+      <div class="alloc-row"><span class="alloc-pct">20%</span><span class="alloc-name">스테이커 보상풀</span><span class="alloc-bar"><span style="width:20%"></span></span></div>
+      <div class="alloc-row"><span class="alloc-pct">10%</span><span class="alloc-name">창작자 자동 지급</span><span class="alloc-bar"><span style="width:10%"></span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="about" id="usecases">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">03 — Use Cases</div>
+      <h2 class="section-title">$SOVE 활용처.</h2>
+    </div>
+
+    <div class="uc-list">
+      <div class="uc"><span class="uc-no">01</span><div class="uc-body"><strong>수수료 결제</strong> — 모든 거래 수수료를 $SOVE로 결제 시 50% 할인. 가장 일반적인 사용처.</div></div>
+      <div class="uc"><span class="uc-no">02</span><div class="uc-body"><strong>NFT 직접 구매</strong> — USDC, ETH 외에 $SOVE로 NFT를 직접 구매할 수 있습니다.</div></div>
+      <div class="uc"><span class="uc-no">03</span><div class="uc-body"><strong>스테이킹 보상</strong> — 4-Tier로 락업 시 8 — 18% APY 수령. 티어별 플랫폼 혜택 동반.</div></div>
+      <div class="uc"><span class="uc-no">04</span><div class="uc-body"><strong>거버넌스 투표</strong> — 보유량 기반 투표 가중치. Sovereign 티어는 DAO 의결권 보유.</div></div>
+      <div class="uc"><span class="uc-no">05</span><div class="uc-body"><strong>큐레이션 보상</strong> — Gold+ 티어가 추천한 신규 작품이 거래 활성화 시 보상 분배.</div></div>
+      <div class="uc"><span class="uc-no">06</span><div class="uc-body"><strong>보험 풀 예치</strong> — $SOVE를 보험 풀에 예치하고 6 — 10% APY 수령. 실물 자산 리스크 분담.</div></div>
+      <div class="uc"><span class="uc-no">07</span><div class="uc-body"><strong>NFT 담보 대출 이자</strong> — 차입자가 지급하는 연 8 — 15% 이자가 $SOVE로 분배됩니다.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STAKING -->
+<section class="about" id="staking" style="background: var(--bg-1);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">04 — Staking</div>
+      <h2 class="section-title">4-Tier Staking.</h2>
+      <p class="section-sub">
+        $SOVE를 락업하면 단순 이자 수익을 넘어 플랫폼의 다양한 혜택이 잠금 해제됩니다.
+        고티어일수록 락업 기간이 길어지지만 그만큼의 운영 권한이 부여됩니다.
+      </p>
+    </div>
+
+    <div class="tier-list">
+      <div class="tier tier-bronze">
+        <div class="t-name">Bronze</div>
+        <div class="t-amt">1,000 SOVE</div>
+        <div class="t-apy">8 — 10% APY</div>
+        <div class="t-lock">30일 락업</div>
+        <div class="t-bonus">· 거래 수수료 20% 할인</div>
+      </div>
+      <div class="tier tier-silver">
+        <div class="t-name">Silver</div>
+        <div class="t-amt">10,000 SOVE</div>
+        <div class="t-apy">10 — 12% APY</div>
+        <div class="t-lock">90일 락업</div>
+        <div class="t-bonus">· 수수료 35% 할인<br/>· 신규 NFT 조기 접근권</div>
+      </div>
+      <div class="tier tier-gold">
+        <div class="t-name">Gold</div>
+        <div class="t-amt">50,000 SOVE</div>
+        <div class="t-apy">12 — 15% APY</div>
+        <div class="t-lock">180일 락업</div>
+        <div class="t-bonus">· 수수료 50% 할인<br/>· 큐레이션 투표권<br/>· OTC 우선 매칭</div>
+      </div>
+      <div class="tier tier-sov">
+        <div class="t-name">Sovereign</div>
+        <div class="t-amt">200,000 SOVE</div>
+        <div class="t-apy">15 — 18% APY</div>
+        <div class="t-lock">365일 락업</div>
+        <div class="t-bonus">· 전 혜택 포함<br/>· DAO 거버넌스 투표권<br/>· 보험 심사 위원회</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISTRIBUTION -->
+<section class="about" id="distribution">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">05 — Distribution</div>
+      <h2 class="section-title">토큰 분배.</h2>
+      <p class="section-sub">
+        $SOVE의 초기 분배는 장기적 생태계 성장을 우선하도록 설계되었습니다.
+        팀과 투자자 분량은 모두 락업되며, 커뮤니티 인센티브와 생태계 발전에 가장 큰 비중을 둡니다.
+      </p>
+    </div>
+
+    <div class="alloc">
+      <div class="alloc-row"><span class="alloc-pct">35%</span><span class="alloc-name">생태계 인센티브 (스테이킹, LP)</span><span class="alloc-bar"><span style="width:35%"></span></span></div>
+      <div class="alloc-row"><span class="alloc-pct">25%</span><span class="alloc-name">SOVE Foundation Treasury</span><span class="alloc-bar"><span style="width:25%"></span></span></div>
+      <div class="alloc-row"><span class="alloc-pct">15%</span><span class="alloc-name">팀 (4년 vesting · 1년 cliff)</span><span class="alloc-bar"><span style="width:15%"></span></span></div>
+      <div class="alloc-row"><span class="alloc-pct">15%</span><span class="alloc-name">초기 투자자 (3년 vesting)</span><span class="alloc-bar"><span style="width:15%"></span></span></div>
+      <div class="alloc-row"><span class="alloc-pct">10%</span><span class="alloc-name">초기 유동성 (DEX LP)</span><span class="alloc-bar"><span style="width:10%"></span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GOVERNANCE -->
+<section class="about" id="governance" style="background: var(--bg-1);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">06 — Governance</div>
+      <h2 class="section-title">DAO로 가는 길.</h2>
+    </div>
+
+    <div class="kvr">
+      <div class="kvr-row"><span class="k">투표 자격</span><span class="v">Sovereign 티어 (200,000 SOVE 이상 락업)</span></div>
+      <div class="kvr-row"><span class="k">제안 기준</span><span class="v">Gold 티어 이상 · 1M SOVE 이상의 지지 서명</span></div>
+      <div class="kvr-row"><span class="k">투표 기간</span><span class="v">7일</span></div>
+      <div class="kvr-row"><span class="k">정족수</span><span class="v">총 발행량의 10% 이상</span></div>
+      <div class="kvr-row"><span class="k">통과 기준</span><span class="v hl">찬성 60% 이상</span></div>
+      <div class="kvr-row"><span class="k">Timelock</span><span class="v">통과 후 48 — 72시간 지연 집행</span></div>
+      <div class="kvr-row"><span class="k">완전 DAO 전환</span><span class="v">Phase 4 (2027 Q4 — 2028)</span></div>
+    </div>
+
+    <h3 class="sub-h">거버넌스 대상</h3>
+    <ul class="bullet-list">
+      <li>수수료 구조 변경 (현재 5/2.5/1%)</li>
+      <li>스테이킹 APY 및 락업 기간 조정</li>
+      <li>신규 도장 종류 추가 및 발급자 승인</li>
+      <li>Multi-Sig 서명자 변경</li>
+      <li>Treasury 자금 집행 (1M SOVE 이상)</li>
+      <li>플랫폼 파라미터 (LTV, 청산 기준 등)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand brand-foot"><span class="brand-name">SOVE</span></div>
+        <p>Sovereign Value Economy<br/>Powered by <span class="nobr">GIWA Chain</span> · <span class="nobr">Ethereum L2</span></p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Platform</h4>
+          <a href="platform.html#nft">NFT Marketplace</a>
+          <a href="platform.html#exchange">SOVE Exchange</a>
+          <a href="platform.html#defi">DeFi Hub</a>
+          <a href="platform.html#ticket">Ticket Center</a>
+        </div>
+        <div class="foot-col">
+          <h4>Token</h4>
+          <a href="token.html#economics">Economics</a>
+          <a href="token.html#staking">Staking</a>
+          <a href="token.html#governance">Governance</a>
+          <a href="dojang.html">Dojang</a>
+        </div>
+        <div class="foot-col">
+          <h4>Resources</h4>
+          <a href="#whitepaper">Whitepaper</a>
+          <a href="#">Technical Docs</a>
+          <a href="#">GIWA Docs</a>
+          <a href="dojang.html">Dojang Reference</a>
+        </div>
+        <div class="foot-col">
+          <h4>Community</h4>
+          <a href="#">Twitter</a>
+          <a href="#">Discord</a>
+          <a href="#">Telegram</a>
+          <a href="#">Medium</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 SOVE Foundation</div>
+      <div class="foot-meta">
+        <span>v1.0</span>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Risk Disclosure</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js?v=2"></script>
+<script src="wallet.js?v=2"></script>
+</body>
+</html>
