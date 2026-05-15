@@ -34,6 +34,7 @@
       <button class="admin-nav-item" data-tab="governance"><span class="admin-nav-num">06</span>Governance<span class="admin-nav-badge">3</span></button>
       <button class="admin-nav-item" data-tab="security"><span class="admin-nav-num">07</span>Security</button>
       <button class="admin-nav-item" data-tab="reports"><span class="admin-nav-num">08</span>Reports</button>
+      <button class="admin-nav-item" data-tab="mint"><span class="admin-nav-num">09</span>Mint NFT<span class="admin-nav-badge">NEW</span></button>
     </nav>
 
     <div class="admin-divider"></div>
@@ -894,12 +895,242 @@
         </div>
       </div>
 
+      <!-- ====================================
+           09 MINT NFT (Collateral)
+           ==================================== -->
+      <div class="admin-panel" id="panel-mint">
+
+        <div class="mint-banner">
+          <div>
+            <div class="mint-banner-eyebrow">Collateral Asset Minting</div>
+            <div class="mint-banner-title">GIWA Chain 위에 담보 NFT를 발행합니다</div>
+            <div class="mint-banner-sub">감정·수탁·보험 3종 도장이 모두 완료된 자산만 NFT 발행이 가능합니다. 발행 즉시 감정가에 비례하여 $SOVE가 Mint됩니다.</div>
+          </div>
+          <div class="mint-banner-net">
+            <span class="net-dot"></span>
+            <div>
+              <div class="net-name">GIWA Sepolia</div>
+              <div class="net-chain">Chain ID 91342 · 0x164EE</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mint-grid">
+
+          <!-- LEFT: Form -->
+          <div class="mint-form">
+
+            <div class="ad-card">
+              <div class="ad-card-h">
+                <div><div class="ad-card-title">01 — Asset Type</div><div class="ad-card-meta">NFT Standard 선택</div></div>
+              </div>
+              <div class="type-grid">
+                <label class="type-card">
+                  <input type="radio" name="assetType" value="ERC721" checked />
+                  <div class="type-body">
+                    <div class="type-tag">ERC-721</div>
+                    <div class="type-name">Unique Asset</div>
+                    <div class="type-desc">유일 예술품 · 한 점만 발행</div>
+                  </div>
+                </label>
+                <label class="type-card">
+                  <input type="radio" name="assetType" value="ERC1155" />
+                  <div class="type-body">
+                    <div class="type-tag">ERC-1155</div>
+                    <div class="type-name">Edition / Ticket / Collectible</div>
+                    <div class="type-desc">에디션 · 티켓 · 컬렉터블 · 다량 발행</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="ad-card">
+              <div class="ad-card-h">
+                <div><div class="ad-card-title">02 — Asset Information</div><div class="ad-card-meta">메타데이터</div></div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field full">
+                  <label>Title <span class="req">*</span></label>
+                  <input type="text" id="f_title" placeholder="예: Girl with Balloon" />
+                </div>
+                <div class="field">
+                  <label>Creator / Artist <span class="req">*</span></label>
+                  <input type="text" id="f_creator" placeholder="예: Banksy" />
+                </div>
+                <div class="field">
+                  <label>Year</label>
+                  <input type="number" id="f_year" placeholder="2006" min="1000" max="2100" />
+                </div>
+                <div class="field">
+                  <label>Medium</label>
+                  <input type="text" id="f_medium" placeholder="예: spray paint on canvas" />
+                </div>
+                <div class="field">
+                  <label>Dimensions</label>
+                  <input type="text" id="f_dim" placeholder="예: 101 × 78 cm" />
+                </div>
+                <div class="field full ed-only" hidden>
+                  <label>Edition Supply <span class="req">*</span></label>
+                  <input type="number" id="f_supply" placeholder="예: 100" min="1" max="1000000" value="1" />
+                </div>
+                <div class="field full">
+                  <label>Metadata URI (IPFS)</label>
+                  <input type="text" id="f_uri" placeholder="ipfs://QmX… 또는 https://ipfs.io/ipfs/…" />
+                </div>
+              </div>
+            </div>
+
+            <div class="ad-card">
+              <div class="ad-card-h">
+                <div><div class="ad-card-title">03 — Valuation & Custody</div><div class="ad-card-meta">감정 · 수탁 · 보험</div></div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label>Appraised Value (USD) <span class="req">*</span></label>
+                  <input type="number" id="f_value" placeholder="500000" min="1" />
+                </div>
+                <div class="field">
+                  <label>Ref Price (USD/SOVE)</label>
+                  <input type="number" id="f_ref" step="0.0001" placeholder="0.1238" value="0.1238" />
+                </div>
+                <div class="field">
+                  <label>Appraiser <span class="req">*</span></label>
+                  <select id="f_appraiser">
+                    <option value="">— 감정기관 선택 —</option>
+                    <option value="christies">Christie's Singapore</option>
+                    <option value="sothebys">Sotheby's Hong Kong</option>
+                    <option value="phillips">Phillips Korea</option>
+                    <option value="psa">PSA Card Grading</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Custodian <span class="req">*</span></label>
+                  <select id="f_custodian">
+                    <option value="">— 수탁기관 선택 —</option>
+                    <option value="freeport">Freeport · Singapore</option>
+                    <option value="loomis">Loomis Geneva Vault</option>
+                    <option value="brinks_tokyo">Brink's Tokyo</option>
+                    <option value="brinks_london">Brink's London</option>
+                    <option value="crozier">Crozier NYC</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Storage Location</label>
+                  <input type="text" id="f_storage" placeholder="예: 20±2°C, 45-55% RH" />
+                </div>
+                <div class="field">
+                  <label>Insurer <span class="req">*</span></label>
+                  <select id="f_insurer">
+                    <option value="">— 보험사 선택 —</option>
+                    <option value="aig">AIG Specialty Insurance</option>
+                    <option value="axa">AXA Art Insurance</option>
+                    <option value="hiscox">Hiscox London</option>
+                    <option value="chubb">Chubb Group</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Insurance Coverage (USD)</label>
+                  <input type="number" id="f_coverage" placeholder="자동 계산 (감정가 × 110%)" readonly />
+                </div>
+              </div>
+            </div>
+
+            <div class="ad-card">
+              <div class="ad-card-h">
+                <div><div class="ad-card-title">04 — Recipient</div><div class="ad-card-meta">소유자 지갑 주소</div></div>
+              </div>
+              <div class="form-grid">
+                <div class="field full">
+                  <label>Owner Wallet Address <span class="req">*</span></label>
+                  <input type="text" id="f_recipient" placeholder="0x…" pattern="0x[a-fA-F0-9]{40}" />
+                  <div class="field-hint">EIP-55 체크섬 주소 권장. <span class="nobr">GIWA ID</span>가 바인딩되어 있어야 합니다.</div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /mint-form -->
+
+          <!-- RIGHT: Preview -->
+          <div class="mint-preview">
+
+            <div class="ad-card mint-stick">
+              <div class="ad-card-h">
+                <div><div class="ad-card-title">Transaction Preview</div><div class="ad-card-meta">서명 전 검증</div></div>
+              </div>
+
+              <div class="prev-section">
+                <div class="prev-h">Contract</div>
+                <div class="prev-row"><span class="k">Network</span><span class="v">GIWA Sepolia</span></div>
+                <div class="prev-row"><span class="k">Chain ID</span><span class="v mono">0x164EE (91342)</span></div>
+                <div class="prev-row"><span class="k">Contract</span><span class="v mono" id="prev_contract">SOVEArtNFT.sol</span></div>
+                <div class="prev-row"><span class="k">Function</span><span class="v mono" id="prev_fn">mint()</span></div>
+              </div>
+
+              <div class="prev-section">
+                <div class="prev-h">Dojang Verification</div>
+                <div class="dojang-checks">
+                  <div class="dcheck" id="check_appraisal"><span class="dx">○</span>Appraisal Stamp</div>
+                  <div class="dcheck" id="check_custody"><span class="dx">○</span>Custody Stamp</div>
+                  <div class="dcheck" id="check_insurance"><span class="dx">○</span>Insurance Stamp</div>
+                </div>
+              </div>
+
+              <div class="prev-section">
+                <div class="prev-h">$SOVE Mint Estimate</div>
+                <div class="mint-est">
+                  <div class="est-val" id="est_amount">0 SOVE</div>
+                  <div class="est-formula" id="est_formula">= 감정가 ÷ Ref Price</div>
+                </div>
+                <div class="prev-row"><span class="k">Collateral Ratio Impact</span><span class="v" id="est_ratio">—</span></div>
+              </div>
+
+              <div class="prev-section">
+                <div class="prev-h">Gas Estimate</div>
+                <div class="prev-row"><span class="k">Network Fee</span><span class="v mono">~$0.012</span></div>
+                <div class="prev-row"><span class="k">Settle Time</span><span class="v">≤ 3s</span></div>
+              </div>
+
+              <div class="mint-status" id="mint_status" hidden></div>
+
+              <div class="mint-actions">
+                <button type="button" class="admin-btn" id="btn_sign">Sign Intent (EIP-712)</button>
+                <button type="button" class="admin-btn admin-btn-primary" id="btn_mint">Issue Collateral NFT</button>
+              </div>
+
+              <div class="mint-actions">
+                <button type="button" class="admin-btn" id="btn_reset" style="flex:1">Reset Form</button>
+              </div>
+
+              <div class="mint-hint">
+                지갑 연결 필요 · GIWA Sepolia 자동 전환<br/>
+                <strong>Sign Intent</strong>는 가스 없이 mint 의도만 서명합니다.
+              </div>
+            </div>
+
+            <div class="ad-card mint-recent">
+              <div class="ad-card-h">
+                <div><div class="ad-card-title">Recent Mints</div><div class="ad-card-meta">최근 발행</div></div>
+              </div>
+              <div class="mint-history" id="mintHistory">
+                <div class="mh-empty">발행 이력이 여기에 표시됩니다.</div>
+              </div>
+            </div>
+
+          </div><!-- /mint-preview -->
+
+        </div><!-- /mint-grid -->
+
+      </div>
+
     </div><!-- /admin-body -->
   </main>
 </div>
 
 <script src="script.js?v=2"></script>
 <script src="wallet.js?v=2"></script>
-<script src="admin.js?v=1"></script>
+<script src="admin.js?v=2"></script>
+<script type="module" src="mint.js?v=1"></script>
 </body>
 </html>

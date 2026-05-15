@@ -16,7 +16,8 @@
     token: { title: 'Token Dashboard', meta: '$SOVE 유통량 · Mint · Burn · 담보율' },
     governance: { title: 'Governance', meta: '제안 · 투표 · DAO 전환' },
     security: { title: 'Security', meta: 'Multi-Sig · Timelock · 감사 현황' },
-    reports: { title: 'Reports', meta: '자동 생성 보고서 · Daily / Weekly / Monthly / Quarterly' }
+    reports: { title: 'Reports', meta: '자동 생성 보고서 · Daily / Weekly / Monthly / Quarterly' },
+    mint: { title: 'Mint Collateral NFT', meta: 'GIWA Sepolia · 담보 NFT 발행 · Chain ID 91342' }
   };
 
   const navItems = $$('.admin-nav-item[data-tab]');
