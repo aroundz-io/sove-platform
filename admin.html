@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Console — SOVE</title>
+<meta name="description" content="SOVE Platform Admin Console — 자산 · 사용자 · 거래 · 토큰 · 거버넌스 · 보안 통합 관리" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="wallet.css" />
+<link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin">
+
+<div class="admin-layout">
+
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="admin-side">
+    <div class="admin-brand">
+      <span class="brand-mark">S</span>
+      <span class="b-text"><strong>SOVE</strong><span>Admin Console</span></span>
+    </div>
+
+    <nav class="admin-nav" id="adminNav">
+      <button class="admin-nav-item active" data-tab="overview"><span class="admin-nav-num">01</span>Overview</button>
+      <button class="admin-nav-item" data-tab="assets"><span class="admin-nav-num">02</span>Asset Management<span class="admin-nav-badge">8</span></button>
+      <button class="admin-nav-item" data-tab="users"><span class="admin-nav-num">03</span>Users</button>
+      <button class="admin-nav-item" data-tab="tx"><span class="admin-nav-num">04</span>Transactions</button>
+      <button class="admin-nav-item" data-tab="token"><span class="admin-nav-num">05</span>Token Dashboard</button>
+      <button class="admin-nav-item" data-tab="governance"><span class="admin-nav-num">06</span>Governance<span class="admin-nav-badge">3</span></button>
+      <button class="admin-nav-item" data-tab="security"><span class="admin-nav-num">07</span>Security</button>
+      <button class="admin-nav-item" data-tab="reports"><span class="admin-nav-num">08</span>Reports</button>
+    </nav>
+
+    <div class="admin-divider"></div>
+    <nav class="admin-nav">
+      <a class="admin-nav-item" href="index.html"><span class="admin-nav-num">↗</span>Back to Site</a>
+    </nav>
+
+    <div class="admin-side-foot">
+      <div class="admin-user">
+        <div class="admin-user-avatar">A</div>
+        <div class="admin-user-info">
+          <div class="admin-user-name">Admin · aroundz</div>
+          <div class="admin-user-role">Super Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========== MAIN ========== -->
+  <main class="admin-main">
+
+    <!-- TOP BAR -->
+    <div class="admin-topbar">
+      <div>
+        <div class="admin-tab-title" id="tabTitle">Overview</div>
+        <div class="admin-tab-meta" id="tabMeta">실시간 KPI · GIWA Sepolia</div>
+      </div>
+      <div class="admin-search">
+        <input type="text" placeholder="자산 ID · 주소 · TX 해시 검색…" />
+      </div>
+      <div class="admin-actions">
+        <button class="admin-btn">Export</button>
+        <button class="admin-btn admin-btn-primary" data-sove-connect>Connect Wallet</button>
+        <button class="admin-bell" aria-label="Alerts">⏷</button>
+      </div>
+    </div>
+
+    <div class="admin-body">
+
+      <!-- ====================================
+           01 OVERVIEW
+           ==================================== -->
+      <div class="admin-panel active" id="panel-overview">
+
+        <div class="kpi-cards">
+          <div class="kc">
+            <div class="kc-label">24h Volume</div>
+            <div class="kc-value">$2.41M</div>
+            <div class="kc-delta up">▲ 12.4%</div>
+            <svg class="kc-spark" viewBox="0 0 80 36"><polyline fill="none" stroke="#FF3D3D" stroke-width="1.5" points="0,28 12,22 24,26 36,16 48,18 60,10 72,8 80,4"/></svg>
+          </div>
+          <div class="kc">
+            <div class="kc-label">TVL</div>
+            <div class="kc-value">$18.7M</div>
+            <div class="kc-delta up">▲ 3.1%</div>
+            <svg class="kc-spark" viewBox="0 0 80 36"><polyline fill="none" stroke="#FF3D3D" stroke-width="1.5" points="0,22 12,24 24,20 36,18 48,16 60,14 72,12 80,10"/></svg>
+          </div>
+          <div class="kc">
+            <div class="kc-label">Active NFTs</div>
+            <div class="kc-value">1,284</div>
+            <div class="kc-delta up">▲ 7 today</div>
+            <svg class="kc-spark" viewBox="0 0 80 36"><polyline fill="none" stroke="#FF3D3D" stroke-width="1.5" points="0,30 12,28 24,24 36,22 48,18 60,16 72,12 80,8"/></svg>
+          </div>
+          <div class="kc">
+            <div class="kc-label">$SOVE Price</div>
+            <div class="kc-value">$0.1238</div>
+            <div class="kc-delta down">▼ 0.8%</div>
+            <svg class="kc-spark" viewBox="0 0 80 36"><polyline fill="none" stroke="#FF6B6B" stroke-width="1.5" points="0,12 12,14 24,10 36,16 48,18 60,22 72,20 80,24"/></svg>
+          </div>
+        </div>
+
+        <div class="ad-grid-2">
+          <div class="ad-card">
+            <div class="ad-card-h">
+              <div>
+                <div class="ad-card-title">Trading Volume — 30 Days</div>
+                <div class="ad-card-meta">SOVE Exchange · USD</div>
+              </div>
+              <div>
+                <button class="adchip active">30D</button>
+                <button class="adchip">90D</button>
+                <button class="adchip">1Y</button>
+              </div>
+            </div>
+            <div class="chart-area">
+              <svg viewBox="0 0 600 220" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="grad-vol" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FF3D3D" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#FF3D3D" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+                  <line x1="0" y1="40" x2="600" y2="40"/>
+                  <line x1="0" y1="90" x2="600" y2="90"/>
+                  <line x1="0" y1="140" x2="600" y2="140"/>
+                  <line x1="0" y1="190" x2="600" y2="190"/>
+                </g>
+                <path d="M 0 180 L 20 170 L 40 165 L 60 155 L 80 158 L 100 142 L 120 138 L 140 130 L 160 125 L 180 118 L 200 112 L 220 100 L 240 105 L 260 95 L 280 88 L 300 80 L 320 75 L 340 82 L 360 68 L 380 62 L 400 55 L 420 50 L 440 58 L 460 48 L 480 42 L 500 38 L 520 32 L 540 28 L 560 22 L 580 18 L 600 14 L 600 220 L 0 220 Z" fill="url(#grad-vol)"/>
+                <path d="M 0 180 L 20 170 L 40 165 L 60 155 L 80 158 L 100 142 L 120 138 L 140 130 L 160 125 L 180 118 L 200 112 L 220 100 L 240 105 L 260 95 L 280 88 L 300 80 L 320 75 L 340 82 L 360 68 L 380 62 L 400 55 L 420 50 L 440 58 L 460 48 L 480 42 L 500 38 L 520 32 L 540 28 L 560 22 L 580 18 L 600 14" fill="none" stroke="#FF3D3D" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="chart-legend">
+              <div class="chart-legend-item"><span class="swatch" style="background:#FF3D3D"></span>Daily Volume</div>
+              <div class="chart-legend-item"><span class="swatch" style="background:rgba(255,61,61,0.3)"></span>30D Cumulative</div>
+            </div>
+          </div>
+
+          <div class="ad-card">
+            <div class="ad-card-h">
+              <div>
+                <div class="ad-card-title">Fee Distribution</div>
+                <div class="ad-card-meta">자동 분배 · This Month</div>
+              </div>
+            </div>
+            <div class="chart-area" style="display:flex; align-items:center; justify-content:center; padding: 8px 0 16px;">
+              <svg viewBox="0 0 180 180" width="180" height="180">
+                <circle cx="90" cy="90" r="70" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="20"/>
+                <circle cx="90" cy="90" r="70" fill="none" stroke="#FF3D3D" stroke-width="20" stroke-dasharray="176 440" transform="rotate(-90 90 90)"/>
+                <circle cx="90" cy="90" r="70" fill="none" stroke="#FF6B6B" stroke-width="20" stroke-dasharray="132 440" stroke-dashoffset="-176" transform="rotate(-90 90 90)"/>
+                <circle cx="90" cy="90" r="70" fill="none" stroke="#FCD34D" stroke-width="20" stroke-dasharray="88 440" stroke-dashoffset="-308" transform="rotate(-90 90 90)"/>
+                <circle cx="90" cy="90" r="70" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="20" stroke-dasharray="44 440" stroke-dashoffset="-396" transform="rotate(-90 90 90)"/>
+                <text x="90" y="84" text-anchor="middle" fill="#fff" font-size="22" font-weight="800" font-family="Pretendard Variable">$847K</text>
+                <text x="90" y="104" text-anchor="middle" fill="#7C7C7C" font-size="10" letter-spacing="2" font-family="JetBrains Mono">TOTAL FEES</text>
+              </svg>
+            </div>
+            <div class="chart-legend" style="flex-direction:column; gap:8px;">
+              <div class="chart-legend-item"><span class="swatch" style="background:#FF3D3D"></span>Operations 40% · $338.8K</div>
+              <div class="chart-legend-item"><span class="swatch" style="background:#FF6B6B"></span>Burn 30% · $254.1K</div>
+              <div class="chart-legend-item"><span class="swatch" style="background:#FCD34D"></span>Staking 20% · $169.4K</div>
+              <div class="chart-legend-item"><span class="swatch" style="background:rgba(255,255,255,0.3)"></span>Royalty 10% · $84.7K</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ad-card">
+          <div class="ad-card-h">
+            <div>
+              <div class="ad-card-title">Recent Activity</div>
+              <div class="ad-card-meta">실시간 이벤트 · 최근 12건</div>
+            </div>
+            <button class="adchip">View All</button>
+          </div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-dot">M</div>
+              <div class="activity-text"><strong>Asset Minted</strong> — Banksy · "Girl with Balloon" · $500,000 감정가<span class="activity-sub">SOVEMinter.sol · 도장 검증 완료 · NFT #1284</span></div>
+              <div class="activity-time">2 min ago</div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot">T</div>
+              <div class="activity-text"><strong>Trade Executed</strong> — IU Concert Ticket #1027 · 0.5 ETH<span class="activity-sub">Buyer 0x7a3f…be21 · Seller 0xa8b1…f2cc</span></div>
+              <div class="activity-time">5 min ago</div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot">D</div>
+              <div class="activity-text"><strong>Dojang Issued</strong> — Appraisal Stamp · 자산 #1284 · Christie's<span class="activity-sub">Schema 0x4a2c…1f8e · Block 24,891,302</span></div>
+              <div class="activity-time">8 min ago</div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot">S</div>
+              <div class="activity-text"><strong>Stake Created</strong> — Gold Tier · 75,000 SOVE · 180일 락업<span class="activity-sub">User 0xc4d5…9e1a · APY 13.2%</span></div>
+              <div class="activity-time">14 min ago</div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot muted">B</div>
+              <div class="activity-text"><strong>$SOVE Burned</strong> — 4,200 SOVE · 거래 수수료 30%<span class="activity-sub">FeeDistributor.sol · Cumulative 12.4M SOVE</span></div>
+              <div class="activity-time">19 min ago</div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot">R</div>
+              <div class="activity-text"><strong>Redemption Initiated</strong> — NFT #0982 · Hermès 한정판<span class="activity-sub">Custody Freeport SG · 30일 인도 예정</span></div>
+              <div class="activity-time">31 min ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================
+           02 ASSETS
+           ==================================== -->
+      <div class="admin-panel" id="panel-assets">
+        <div class="kpi-cards">
+          <div class="kc"><div class="kc-label">Total Assets</div><div class="kc-value">1,284</div><div class="kc-delta up">▲ 7 today</div></div>
+          <div class="kc"><div class="kc-label">Pending Review</div><div class="kc-value acc">8</div><div class="kc-delta down">▼ 2 from yesterday</div></div>
+          <div class="kc"><div class="kc-label">Total AUM</div><div class="kc-value">$48.7M</div><div class="kc-delta up">▲ 3.2%</div></div>
+          <div class="kc"><div class="kc-label">Collateral Ratio</div><div class="kc-value acc">154%</div><div class="kc-delta">Healthy · 150%+</div></div>
+        </div>
+
+        <div class="ad-card">
+          <div class="ad-card-h">
+            <div>
+              <div class="ad-card-title">자산 등록 심사 대기</div>
+              <div class="ad-card-meta">PENDING · 8건 대기 · 감정/수탁/보험 단계별 진행</div>
+            </div>
+            <div>
+              <button class="adchip active">All</button>
+              <button class="adchip">감정 대기</button>
+              <button class="adchip">수탁 대기</button>
+              <button class="adchip">보험 대기</button>
+            </div>
+          </div>
+          <div class="adtable-wrap">
+            <table class="adtable">
+              <thead>
+                <tr><th>Asset ID</th><th>Title</th><th>Creator</th><th>Appraised</th><th>Custody</th><th>Insurance</th><th>Stage</th><th>Action</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono bold">#1285</td>
+                  <td>Untitled (Black on Maroon)</td>
+                  <td>Mark Rothko</td>
+                  <td class="acc">$2,400,000</td>
+                  <td><span class="badge ok">Sealed</span></td>
+                  <td><span class="badge ok">Sealed</span></td>
+                  <td><span class="badge pending">Insurance</span></td>
+                  <td><button class="adchip">Review</button></td>
+                </tr>
+                <tr>
+                  <td class="mono bold">#1286</td>
+                  <td>BTS Memorial NFT 2024</td>
+                  <td>HYBE Labels</td>
+                  <td class="acc">$48,000</td>
+                  <td><span class="badge pending">Pending</span></td>
+                  <td><span class="badge muted">—</span></td>
+                  <td><span class="badge pending">Custody</span></td>
+                  <td><button class="adchip">Review</button></td>
+                </tr>
+                <tr>
+                  <td class="mono bold">#1287</td>
+                  <td>Hermès Birkin Black Croc</td>
+                  <td>Hermès Authenticated</td>
+                  <td class="acc">$185,000</td>
+                  <td><span class="badge ok">Sealed</span></td>
+                  <td><span class="badge ok">Sealed</span></td>
+                  <td><span class="badge ok">Ready</span></td>
+                  <td><button class="adchip active">Approve</button></td>
+                </tr>
+                <tr>
+                  <td class="mono bold">#1288</td>
+                  <td>Concert Series A · Block 21</td>
+                  <td>Live Nation Korea</td>
+                  <td class="acc">$320,000</td>
+                  <td><span class="badge muted">N/A · Digital</span></td>
+                  <td><span class="badge muted">N/A</span></td>
+                  <td><span class="badge ok">Ready</span></td>
+                  <td><button class="adchip active">Approve</button></td>
+                </tr>
+                <tr>
+                  <td class="mono bold">#1289</td>
+                  <td>Le Bonheur de Vivre (Study)</td>
+                  <td>Henri Matisse Estate</td>
+                  <td class="acc">$5,800,000</td>
+                  <td><span class="badge pending">In Transit</span></td>
+                  <td><span class="badge muted">—</span></td>
+                  <td><span class="badge pending">Custody</span></td>
+                  <td><button class="adchip">Review</button></td>
+                </tr>
+                <tr>
+                  <td class="mono bold">#1290</td>
+                  <td>K-Drama Soundtrack Vinyl</td>
+                  <td>SM Entertainment</td>
+                  <td class="acc">$12,500</td>
+                  <td><span class="badge ok">Sealed</span></td>
+                  <td><span class="badge pending">Pending</span></td>
+                  <td><span class="badge pending">Insurance</span></td>
+                  <td><button class="adchip">Review</button></td>
+                </tr>
+                <tr>
+                  <td class="mono bold">#1291</td>
+                  <td>Untitled (Skull)</td>
+                  <td>Jean-Michel Basquiat</td>
+                  <td class="acc">$12,000,000</td>
+                  <td><span class="badge pending">Appraising</span></td>
+                  <td><span class="badge muted">—</span></td>
+                  <td><span class="badge pending">Appraisal</span></td>
+                  <td><button class="adchip">Review</button></td>
+                </tr>
+                <tr>
+                  <td class="mono bold">#1292</td>
+                  <td>Pokémon Charizard 1st Edition</td>
+                  <td>PSA Authenticated</td>
+                  <td class="acc">$420,000</td>
+                  <td><span class="badge ok">Sealed</span></td>
+                  <td><span class="badge ok">Sealed</span></td>
+                  <td><span class="badge ok">Ready</span></td>
+                  <td><button class="adchip active">Approve</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="ad-grid-2">
+          <div class="ad-card">
+            <div class="ad-card-h">
+              <div><div class="ad-card-title">감정기관 현황</div><div class="ad-card-meta">파트너 감정기관 · This Month</div></div>
+            </div>
+            <div class="adtable-wrap">
+              <table class="adtable">
+                <thead><tr><th>Appraiser</th><th>Completed</th><th>Active</th><th>Avg Time</th></tr></thead>
+                <tbody>
+                  <tr><td class="bold">Christie's Singapore</td><td>42</td><td>3</td><td class="mono">3.2 days</td></tr>
+                  <tr><td class="bold">Sotheby's Hong Kong</td><td>38</td><td>2</td><td class="mono">4.1 days</td></tr>
+                  <tr><td class="bold">Phillips Korea</td><td>21</td><td>1</td><td class="mono">2.8 days</td></tr>
+                  <tr><td class="bold">PSA Card Grading</td><td>156</td><td>4</td><td class="mono">1.2 days</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="ad-card">
+            <div class="ad-card-h">
+              <div><div class="ad-card-title">수탁기관 상태</div><div class="ad-card-meta">Custody Partners</div></div>
+            </div>
+            <div class="adtable-wrap">
+              <table class="adtable">
+                <thead><tr><th>Custodian</th><th>Assets</th><th>Last Audit</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td class="bold">Freeport · Singapore</td><td>847</td><td class="mono">3d ago</td><td><span class="badge ok">Verified</span></td></tr>
+                  <tr><td class="bold">Loomis Geneva Vault</td><td>234</td><td class="mono">5d ago</td><td><span class="badge ok">Verified</span></td></tr>
+                  <tr><td class="bold">Brink's Tokyo</td><td>129</td><td class="mono">1d ago</td><td><span class="badge ok">Verified</span></td></tr>
+                  <tr><td class="bold">Crozier NYC</td><td>74</td><td class="mono">7d ago</td><td><span class="badge pending">Audit Due</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================
+           03 USERS
+           ==================================== -->
+      <div class="admin-panel" id="panel-users">
+        <div class="kpi-cards">
+          <div class="kc"><div class="kc-label">Total Users (MAU)</div><div class="kc-value">8,420</div><div class="kc-delta up">▲ 12.4% MoM</div></div>
+          <div class="kc"><div class="kc-label">KYC Completed</div><div class="kc-value acc">7,890</div><div class="kc-delta">93.7%</div></div>
+          <div class="kc"><div class="kc-label">Staking Users</div><div class="kc-value">2,143</div><div class="kc-delta up">▲ 8.2%</div></div>
+          <div class="kc"><div class="kc-label">Blacklist</div><div class="kc-value">12</div><div class="kc-delta down">▼ 3 reviewed</div></div>
+        </div>
+
+        <div class="ad-card">
+          <div class="ad-card-h">
+            <div>
+              <div class="ad-card-title">사용자 관리</div>
+              <div class="ad-card-meta">USERS · 최근 활동 순</div>
+            </div>
+            <div>
+              <button class="adchip active">All Tiers</button>
+              <button class="adchip">Sovereign</button>
+              <button class="adchip">Gold</button>
+              <button class="adchip">Pending KYC</button>
+            </div>
+          </div>
+          <div class="adtable-wrap">
+            <table class="adtable">
+              <thead>
+                <tr><th>Address</th><th>GIWA ID</th><th>Tier</th><th>Staked SOVE</th><th>NFTs</th><th>KYC</th><th>Last Active</th><th>Action</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="mono bold">0x7a3f…be21</td><td class="mono">@minjun</td><td><span class="tier-badge sov">Sovereign</span></td><td>340,000</td><td>14</td><td><span class="badge ok">Verified</span></td><td class="mono">2m ago</td><td><button class="adchip">View</button></td></tr>
+                <tr><td class="mono bold">0xa8b1…f2cc</td><td class="mono">@jihye.kim</td><td><span class="tier-badge gold">Gold</span></td><td>72,500</td><td>8</td><td><span class="badge ok">Verified</span></td><td class="mono">9m ago</td><td><button class="adchip">View</button></td></tr>
+                <tr><td class="mono bold">0xc4d5…9e1a</td><td class="mono">@curator.lee</td><td><span class="tier-badge sov">Sovereign</span></td><td>205,000</td><td>32</td><td><span class="badge ok">Institutional</span></td><td class="mono">14m ago</td><td><button class="adchip">View</button></td></tr>
+                <tr><td class="mono bold">0x2e9f…01b3</td><td class="mono">@dohyun</td><td><span class="tier-badge silver">Silver</span></td><td>14,800</td><td>3</td><td><span class="badge ok">Verified</span></td><td class="mono">28m ago</td><td><button class="adchip">View</button></td></tr>
+                <tr><td class="mono bold">0xf1aa…7d4e</td><td class="mono">@sora.choi</td><td><span class="tier-badge gold">Gold</span></td><td>58,200</td><td>11</td><td><span class="badge ok">Verified</span></td><td class="mono">42m ago</td><td><button class="adchip">View</button></td></tr>
+                <tr><td class="mono bold">0xb2c8…d6f0</td><td class="mono">—</td><td><span class="tier-badge bronze">Bronze</span></td><td>1,200</td><td>1</td><td><span class="badge pending">Pending</span></td><td class="mono">1h ago</td><td><button class="adchip">Review KYC</button></td></tr>
+                <tr><td class="mono bold">0xe7d3…4521</td><td class="mono">@inst.bvlgari</td><td><span class="tier-badge sov">Sovereign</span></td><td>1,250,000</td><td>67</td><td><span class="badge ok">Institutional</span></td><td class="mono">3h ago</td><td><button class="adchip">View</button></td></tr>
+                <tr><td class="mono bold">0x9a4b…cd1f</td><td class="mono">—</td><td><span class="tier-badge bronze">Bronze</span></td><td>0</td><td>0</td><td><span class="badge danger">Flagged</span></td><td class="mono">6h ago</td><td><button class="adchip">Investigate</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="ad-grid-2">
+          <div class="ad-card">
+            <div class="ad-card-h"><div><div class="ad-card-title">KYC 처리 현황</div><div class="ad-card-meta">검증 등급별</div></div></div>
+            <div class="adtable-wrap">
+              <table class="adtable">
+                <thead><tr><th>Tier</th><th>Users</th><th>Coverage</th></tr></thead>
+                <tbody>
+                  <tr><td>Basic (GIWA ID)</td><td>6,234</td><td><div class="gauge"><span style="width:74%"></span></div></td></tr>
+                  <tr><td>Enhanced (≥$10K)</td><td>1,486</td><td><div class="gauge"><span style="width:18%"></span></div></td></tr>
+                  <tr><td>Institutional (≥$100K)</td><td>170</td><td><div class="gauge"><span style="width:2%"></span></div></td></tr>
+                  <tr><td>Pending</td><td>530</td><td><div class="gauge warn"><span style="width:6%"></span></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="ad-card">
+            <div class="ad-card-h"><div><div class="ad-card-title">티어 분포</div><div class="ad-card-meta">Staking Tiers</div></div></div>
+            <div class="adtable-wrap">
+              <table class="adtable">
+                <thead><tr><th>Tier</th><th>Users</th><th>Avg Stake</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="tier-badge bronze">Bronze</span></td><td>1,420</td><td class="mono">3,800 SOVE</td></tr>
+                  <tr><td><span class="tier-badge silver">Silver</span></td><td>512</td><td class="mono">22,100 SOVE</td></tr>
+                  <tr><td><span class="tier-badge gold">Gold</span></td><td>186</td><td class="mono">68,400 SOVE</td></tr>
+                  <tr><td><span class="tier-badge sov">Sovereign</span></td><td>25</td><td class="mono">412,000 SOVE</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================
+           04 TRANSACTIONS
+           ==================================== -->
+      <div class="admin-panel" id="panel-tx">
+        <div class="kpi-cards">
+          <div class="kc"><div class="kc-label">24h Tx Count</div><div class="kc-value">3,847</div><div class="kc-delta up">▲ 8.1%</div></div>
+          <div class="kc"><div class="kc-label">Avg Gas (GIWA)</div><div class="kc-value">$0.008</div><div class="kc-delta">≤3s settle</div></div>
+          <div class="kc"><div class="kc-label">Fee Revenue 24h</div><div class="kc-value acc">$28.4K</div><div class="kc-delta up">▲ 6.2%</div></div>
+          <div class="kc"><div class="kc-label">Anomaly Flags</div><div class="kc-value">2</div><div class="kc-delta down">Auto-paused</div></div>
+        </div>
+
+        <div class="ad-card">
+          <div class="ad-card-h">
+            <div><div class="ad-card-title">Live Transactions</div><div class="ad-card-meta">LIVE · GIWA Sepolia · Auto-refresh 5s</div></div>
+            <div>
+              <button class="adchip active">All</button>
+              <button class="adchip">NFT Trade</button>
+              <button class="adchip">Stake</button>
+              <button class="adchip">Mint/Burn</button>
+              <button class="adchip">⚠ Flagged</button>
+            </div>
+          </div>
+          <div class="adtable-wrap">
+            <table class="adtable">
+              <thead>
+                <tr><th>Time</th><th>TX Hash</th><th>Type</th><th>From → To</th><th>Asset</th><th>Value</th><th>Fee</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="mono">14:24:08</td><td class="mono">0x4f2a…91dc</td><td>NFT Trade</td><td class="mono">0x7a3f… → 0xa8b1…</td><td>Banksy #1284</td><td class="bold">$500,000</td><td class="mono">$6,250</td><td><span class="badge ok">Confirmed</span></td></tr>
+                <tr><td class="mono">14:23:52</td><td class="mono">0x7c8e…3b1f</td><td>Stake Deposit</td><td class="mono">0xc4d5… → Staking</td><td>—</td><td class="bold">75,000 SOVE</td><td class="mono">$0.008</td><td><span class="badge ok">Confirmed</span></td></tr>
+                <tr><td class="mono">14:23:31</td><td class="mono">0xa1b2…ef02</td><td>Dojang Issued</td><td class="mono">Christie's → DojangVerifier</td><td>Appraisal #1284</td><td class="bold">—</td><td class="mono">$0.012</td><td><span class="badge ok">Sealed</span></td></tr>
+                <tr><td class="mono">14:23:14</td><td class="mono">0x5d4e…78a9</td><td>$SOVE Mint</td><td class="mono">Minter → 0xa8b1…</td><td>—</td><td class="bold">5,000,000 SOVE</td><td class="mono">$0.015</td><td><span class="badge ok">Confirmed</span></td></tr>
+                <tr><td class="mono">14:22:58</td><td class="mono">0xfd9c…1a2b</td><td>Ticket Trade</td><td class="mono">0x2e9f… → 0xf1aa…</td><td>IU Concert #1027</td><td class="bold">$1,580</td><td class="mono">$79</td><td><span class="badge ok">Confirmed</span></td></tr>
+                <tr><td class="mono">14:22:42</td><td class="mono">0x9a4b…6c0d</td><td>OTC Trade</td><td class="mono">0xe7d3… → 0xb2c8…</td><td>Hermès Birkin</td><td class="bold">$185,000</td><td class="mono">$1,850</td><td><span class="badge ok">Confirmed</span></td></tr>
+                <tr><td class="mono">14:22:19</td><td class="mono">0x3e5f…4d7c</td><td>Loan Repay</td><td class="mono">0xa8b1… → NFTFi</td><td>—</td><td class="bold">42,000 SOVE</td><td class="mono">$0.008</td><td><span class="badge ok">Confirmed</span></td></tr>
+                <tr><td class="mono">14:21:54</td><td class="mono">0x8b1c…2e3a</td><td>Wash Trade?</td><td class="mono">0x9a4b… → 0x6c2d…</td><td>Charizard #0982</td><td class="danger bold">$8,400</td><td class="mono">$0.012</td><td><span class="badge danger">Paused</span></td></tr>
+                <tr><td class="mono">14:21:31</td><td class="mono">0xc6d7…ab90</td><td>$SOVE Burn</td><td class="mono">FeeDistributor → 0x000…</td><td>—</td><td class="bold">4,200 SOVE</td><td class="mono">$0.005</td><td><span class="badge ok">Burned</span></td></tr>
+                <tr><td class="mono">14:21:08</td><td class="mono">0x2f3a…5d6c</td><td>Redemption</td><td class="mono">0xb2c8… → Custodian</td><td>NFT #0982</td><td class="bold">—</td><td class="mono">$0.020</td><td><span class="badge pending">Shipping</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================
+           05 TOKEN DASHBOARD
+           ==================================== -->
+      <div class="admin-panel" id="panel-token">
+        <div class="kpi-cards">
+          <div class="kc"><div class="kc-label">Total Supply</div><div class="kc-value">487.6M</div><div class="kc-delta">SOVE</div></div>
+          <div class="kc"><div class="kc-label">Circulating</div><div class="kc-value">312.4M</div><div class="kc-delta">64% of supply</div></div>
+          <div class="kc"><div class="kc-label">Cumulative Burn</div><div class="kc-value acc">12.4M</div><div class="kc-delta up">▲ 142K this week</div></div>
+          <div class="kc"><div class="kc-label">Collateral Ratio</div><div class="kc-value acc">154%</div><div class="kc-delta">Target ≥150%</div></div>
+        </div>
+
+        <div class="ad-grid-2">
+          <div class="ad-card">
+            <div class="ad-card-h"><div><div class="ad-card-title">Mint / Burn — 30 Days</div><div class="ad-card-meta">$SOVE Supply Dynamics</div></div></div>
+            <div class="chart-area">
+              <svg viewBox="0 0 600 220" preserveAspectRatio="none">
+                <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+                  <line x1="0" y1="55" x2="600" y2="55"/>
+                  <line x1="0" y1="110" x2="600" y2="110"/>
+                  <line x1="0" y1="165" x2="600" y2="165"/>
+                </g>
+                <!-- mint bars -->
+                <g fill="#FF3D3D">
+                  <rect x="10" y="80" width="12" height="30"/>
+                  <rect x="32" y="65" width="12" height="45"/>
+                  <rect x="54" y="78" width="12" height="32"/>
+                  <rect x="76" y="50" width="12" height="60"/>
+                  <rect x="98" y="70" width="12" height="40"/>
+                  <rect x="120" y="55" width="12" height="55"/>
+                  <rect x="142" y="68" width="12" height="42"/>
+                  <rect x="164" y="40" width="12" height="70"/>
+                  <rect x="186" y="60" width="12" height="50"/>
+                  <rect x="208" y="48" width="12" height="62"/>
+                  <rect x="230" y="55" width="12" height="55"/>
+                  <rect x="252" y="42" width="12" height="68"/>
+                  <rect x="274" y="35" width="12" height="75"/>
+                  <rect x="296" y="50" width="12" height="60"/>
+                  <rect x="318" y="38" width="12" height="72"/>
+                  <rect x="340" y="45" width="12" height="65"/>
+                  <rect x="362" y="32" width="12" height="78"/>
+                  <rect x="384" y="40" width="12" height="70"/>
+                  <rect x="406" y="28" width="12" height="82"/>
+                  <rect x="428" y="35" width="12" height="75"/>
+                  <rect x="450" y="22" width="12" height="88"/>
+                  <rect x="472" y="30" width="12" height="80"/>
+                  <rect x="494" y="18" width="12" height="92"/>
+                  <rect x="516" y="25" width="12" height="85"/>
+                  <rect x="538" y="14" width="12" height="96"/>
+                  <rect x="560" y="20" width="12" height="90"/>
+                  <rect x="582" y="10" width="12" height="100"/>
+                </g>
+                <!-- burn bars (below center) -->
+                <g fill="#FF6B6B">
+                  <rect x="10" y="110" width="12" height="22"/>
+                  <rect x="32" y="110" width="12" height="28"/>
+                  <rect x="54" y="110" width="12" height="20"/>
+                  <rect x="76" y="110" width="12" height="35"/>
+                  <rect x="98" y="110" width="12" height="25"/>
+                  <rect x="120" y="110" width="12" height="32"/>
+                  <rect x="142" y="110" width="12" height="26"/>
+                  <rect x="164" y="110" width="12" height="42"/>
+                  <rect x="186" y="110" width="12" height="30"/>
+                  <rect x="208" y="110" width="12" height="38"/>
+                  <rect x="230" y="110" width="12" height="33"/>
+                  <rect x="252" y="110" width="12" height="42"/>
+                  <rect x="274" y="110" width="12" height="48"/>
+                  <rect x="296" y="110" width="12" height="35"/>
+                  <rect x="318" y="110" width="12" height="45"/>
+                  <rect x="340" y="110" width="12" height="40"/>
+                  <rect x="362" y="110" width="12" height="50"/>
+                  <rect x="384" y="110" width="12" height="44"/>
+                  <rect x="406" y="110" width="12" height="55"/>
+                  <rect x="428" y="110" width="12" height="46"/>
+                  <rect x="450" y="110" width="12" height="58"/>
+                  <rect x="472" y="110" width="12" height="50"/>
+                  <rect x="494" y="110" width="12" height="62"/>
+                  <rect x="516" y="110" width="12" height="55"/>
+                  <rect x="538" y="110" width="12" height="65"/>
+                  <rect x="560" y="110" width="12" height="58"/>
+                  <rect x="582" y="110" width="12" height="68"/>
+                </g>
+                <line x1="0" y1="110" x2="600" y2="110" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="chart-legend">
+              <div class="chart-legend-item"><span class="swatch" style="background:#FF3D3D"></span>Mint (위)</div>
+              <div class="chart-legend-item"><span class="swatch" style="background:#FF6B6B"></span>Burn (아래)</div>
+            </div>
+          </div>
+
+          <div class="ad-card">
+            <div class="ad-card-h"><div><div class="ad-card-title">담보율 모니터링</div><div class="ad-card-meta">Total Locked vs Total Mint</div></div></div>
+            <div style="padding: 24px 0;">
+              <div style="font-size:48px;font-weight:800;color:var(--acc);letter-spacing:-0.03em;line-height:1;">154<span style="font-size:24px;opacity:0.7;">%</span></div>
+              <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-mute);letter-spacing:0.12em;margin-top:6px;text-transform:uppercase;">Current Collateral Ratio</div>
+              <div class="gauge" style="height:10px;margin-top:18px;"><span style="width:77%"></span></div>
+              <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px;color:var(--text-mute);margin-top:6px;">
+                <span>0%</span><span>100%</span><span>150% TARGET</span><span>200%</span>
+              </div>
+            </div>
+            <div class="adtable-wrap">
+              <table class="adtable">
+                <tbody>
+                  <tr><td>Total Asset Value (USD)</td><td class="bold mono acc">$48.7M</td></tr>
+                  <tr><td>Total Mint Value (USD)</td><td class="bold mono">$31.6M</td></tr>
+                  <tr><td>Buffer (담보 여유분)</td><td class="bold mono">+54%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================
+           06 GOVERNANCE
+           ==================================== -->
+      <div class="admin-panel" id="panel-governance">
+        <div class="kpi-cards">
+          <div class="kc"><div class="kc-label">Active Proposals</div><div class="kc-value">3</div><div class="kc-delta">Voting in progress</div></div>
+          <div class="kc"><div class="kc-label">Total Voters</div><div class="kc-value">186</div><div class="kc-delta">Sovereign+Gold</div></div>
+          <div class="kc"><div class="kc-label">DAO Transition</div><div class="kc-value acc">72%</div><div class="kc-delta">Phase 3 → 4</div></div>
+          <div class="kc"><div class="kc-label">Treasury</div><div class="kc-value">$12.4M</div><div class="kc-delta">USDC + ETH</div></div>
+        </div>
+
+        <div class="ad-card">
+          <div class="ad-card-h"><div><div class="ad-card-title">Active Proposals</div><div class="ad-card-meta">투표 진행 중 · 7-day window</div></div><button class="adchip">+ New Proposal</button></div>
+
+          <div class="proposal">
+            <div class="proposal-head">
+              <div>
+                <div class="proposal-no">SIP-042 · Fee Distribution</div>
+                <div class="proposal-title">2차 거래 수수료를 2.5% → 2.0%로 인하</div>
+                <div class="proposal-desc">유동성 증대를 위해 2차 거래 수수료 0.5%p 인하. $SOVE 결제 시 1.0%로 조정. 통과 시 3일 후 적용.</div>
+              </div>
+              <span class="badge ok">Voting</span>
+            </div>
+            <div class="proposal-bar">
+              <span class="yes" style="width:64%"></span>
+              <span class="no" style="width:14%"></span>
+            </div>
+            <div class="proposal-stats">
+              <span><span class="yes-c">For 64.2%</span> · 12.4M SOVE</span>
+              <span><span class="no-c">Against 14.1%</span> · 2.7M SOVE</span>
+              <span>Ends in 3d 18h</span>
+            </div>
+          </div>
+
+          <div class="proposal">
+            <div class="proposal-head">
+              <div>
+                <div class="proposal-no">SIP-043 · New Custodian</div>
+                <div class="proposal-title">Brink's London Vault 신규 수탁기관 승인</div>
+                <div class="proposal-desc">유럽 컬렉션 확장을 위한 영국 거점 수탁기관 추가. 연간 한도 $50M.</div>
+              </div>
+              <span class="badge ok">Voting</span>
+            </div>
+            <div class="proposal-bar">
+              <span class="yes" style="width:82%"></span>
+              <span class="no" style="width:4%"></span>
+            </div>
+            <div class="proposal-stats">
+              <span><span class="yes-c">For 82.4%</span> · 14.7M SOVE</span>
+              <span><span class="no-c">Against 4.1%</span> · 0.7M SOVE</span>
+              <span>Ends in 5d 4h</span>
+            </div>
+          </div>
+
+          <div class="proposal">
+            <div class="proposal-head">
+              <div>
+                <div class="proposal-no">SIP-044 · Staking APY</div>
+                <div class="proposal-title">Sovereign Tier APY 18% → 20% 상향</div>
+                <div class="proposal-desc">장기 락업 유인 강화를 위한 최고 티어 APY 2%p 상향. 정족수 미달 시 자동 폐기.</div>
+              </div>
+              <span class="badge pending">Quorum 38%</span>
+            </div>
+            <div class="proposal-bar">
+              <span class="yes" style="width:18%"></span>
+              <span class="no" style="width:20%"></span>
+            </div>
+            <div class="proposal-stats">
+              <span><span class="yes-c">For 18.2%</span> · 1.4M SOVE</span>
+              <span><span class="no-c">Against 20.1%</span> · 1.5M SOVE</span>
+              <span>Ends in 6d 22h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ad-card">
+          <div class="ad-card-h"><div><div class="ad-card-title">Recent Executions</div><div class="ad-card-meta">통과된 제안의 Timelock 이후 집행 이력</div></div></div>
+          <div class="adtable-wrap">
+            <table class="adtable">
+              <thead><tr><th>SIP</th><th>Title</th><th>Result</th><th>Timelock</th><th>Executed</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">SIP-041</td><td>Dojang Schema v2 도입</td><td><span class="badge ok">Passed 87%</span></td><td class="mono">72h</td><td class="mono">2026-05-08</td></tr>
+                <tr><td class="mono">SIP-040</td><td>IPFS Pinning 파트너 추가</td><td><span class="badge ok">Passed 91%</span></td><td class="mono">48h</td><td class="mono">2026-04-22</td></tr>
+                <tr><td class="mono">SIP-039</td><td>NFT-Fi LTV 30→35% 조정</td><td><span class="badge danger">Failed 42%</span></td><td class="mono">—</td><td class="mono">—</td></tr>
+                <tr><td class="mono">SIP-038</td><td>창작자 로열티 자동화 강화</td><td><span class="badge ok">Passed 78%</span></td><td class="mono">48h</td><td class="mono">2026-04-01</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================
+           07 SECURITY
+           ==================================== -->
+      <div class="admin-panel" id="panel-security">
+        <div class="kpi-cards">
+          <div class="kc"><div class="kc-label">CertiK Score</div><div class="kc-value acc">94/100</div><div class="kc-delta up">▲ 2 this month</div></div>
+          <div class="kc"><div class="kc-label">Open Vulnerabilities</div><div class="kc-value">0</div><div class="kc-delta">All resolved</div></div>
+          <div class="kc"><div class="kc-label">Multi-Sig Pending</div><div class="kc-value">1</div><div class="kc-delta">2/4 signed</div></div>
+          <div class="kc"><div class="kc-label">Timelocks Active</div><div class="kc-value">2</div><div class="kc-delta">48 — 72h delay</div></div>
+        </div>
+
+        <div class="ad-card">
+          <div class="ad-card-h"><div><div class="ad-card-title">Multi-Sig 4-of-7 Signers</div><div class="ad-card-meta">SOVE Foundation Treasury · Gnosis Safe</div></div></div>
+          <div class="signers">
+            <div class="signer">
+              <div class="signer-name">Foundation 1</div>
+              <div class="signer-addr">0x4a8c…d521</div>
+              <div class="signer-status signed">✓ Signed</div>
+            </div>
+            <div class="signer">
+              <div class="signer-name">Foundation 2</div>
+              <div class="signer-addr">0x9f2b…8c14</div>
+              <div class="signer-status signed">✓ Signed</div>
+            </div>
+            <div class="signer">
+              <div class="signer-name">Legal Counsel</div>
+              <div class="signer-addr">0x2c5e…91a7</div>
+              <div class="signer-status pending">⋯ Pending</div>
+            </div>
+            <div class="signer">
+              <div class="signer-name">Tech Lead</div>
+              <div class="signer-addr">0x6e3d…ab28</div>
+              <div class="signer-status pending">⋯ Pending</div>
+            </div>
+            <div class="signer">
+              <div class="signer-name">Auditor (Independent)</div>
+              <div class="signer-addr">0x1f7a…3c90</div>
+              <div class="signer-status pending">— Not Required</div>
+            </div>
+            <div class="signer">
+              <div class="signer-name">Community Rep</div>
+              <div class="signer-addr">0x8d4b…2e51</div>
+              <div class="signer-status pending">— Not Required</div>
+            </div>
+            <div class="signer">
+              <div class="signer-name">External Director</div>
+              <div class="signer-addr">0xc9f0…7d12</div>
+              <div class="signer-status pending">— Not Required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ad-grid-2">
+          <div class="ad-card">
+            <div class="ad-card-h"><div><div class="ad-card-title">Multi-Sig 활동 로그</div><div class="ad-card-meta">최근 30일</div></div></div>
+            <div class="adtable-wrap">
+              <table class="adtable">
+                <thead><tr><th>Time</th><th>Action</th><th>Signers</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td class="mono">14:32</td><td>Treasury → SOVEStaking $850K</td><td>2/4</td><td><span class="badge pending">Pending</span></td></tr>
+                  <tr><td class="mono">May 12</td><td>SIP-041 Execute</td><td>5/4</td><td><span class="badge ok">Executed</span></td></tr>
+                  <tr><td class="mono">May 08</td><td>New Custodian Onboard</td><td>4/4</td><td><span class="badge ok">Executed</span></td></tr>
+                  <tr><td class="mono">May 03</td><td>Insurance Pool Topup $1.2M</td><td>4/4</td><td><span class="badge ok">Executed</span></td></tr>
+                  <tr><td class="mono">Apr 28</td><td>Bug Bounty Payout $25K</td><td>4/4</td><td><span class="badge ok">Executed</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="ad-card">
+            <div class="ad-card-h"><div><div class="ad-card-title">Active Timelocks</div><div class="ad-card-meta">집행 예약 큐</div></div></div>
+            <div class="adtable-wrap">
+              <table class="adtable">
+                <thead><tr><th>Action</th><th>Queued</th><th>Executes In</th></tr></thead>
+                <tbody>
+                  <tr><td>SIP-042 (Fee 2.5→2.0%)</td><td class="mono">14:30</td><td class="mono acc">71h 18m</td></tr>
+                  <tr><td>SIP-043 (Custodian Add)</td><td class="mono">May 14</td><td class="mono acc">47h 04m</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="ad-card">
+          <div class="ad-card-h"><div><div class="ad-card-title">Smart Contract 감사 현황</div><div class="ad-card-meta">CertiK + Hacken</div></div></div>
+          <div class="adtable-wrap">
+            <table class="adtable">
+              <thead><tr><th>Contract</th><th>Auditor</th><th>Last Audit</th><th>Findings</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td class="mono bold">SOVEToken</td><td>CertiK</td><td class="mono">2026-04-01</td><td>0 Critical / 0 High</td><td><span class="badge ok">Cleared</span></td></tr>
+                <tr><td class="mono bold">SOVEMinter</td><td>CertiK + Hacken</td><td class="mono">2026-04-15</td><td>0 Critical / 1 Low (fixed)</td><td><span class="badge ok">Cleared</span></td></tr>
+                <tr><td class="mono bold">DojangVerifier</td><td>CertiK</td><td class="mono">2026-05-02</td><td>0 Critical / 0 High</td><td><span class="badge ok">Cleared</span></td></tr>
+                <tr><td class="mono bold">SOVEExchange</td><td>Hacken</td><td class="mono">2026-04-22</td><td>0 Critical / 2 Med (fixed)</td><td><span class="badge ok">Cleared</span></td></tr>
+                <tr><td class="mono bold">RedemptionManager</td><td>CertiK</td><td class="mono">2026-05-08</td><td>0 Critical / 0 High</td><td><span class="badge ok">Cleared</span></td></tr>
+                <tr><td class="mono bold">SOVEStaking</td><td>CertiK + Hacken</td><td class="mono">2026-03-20</td><td>0 Critical / 1 Low (fixed)</td><td><span class="badge ok">Cleared</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================
+           08 REPORTS
+           ==================================== -->
+      <div class="admin-panel" id="panel-reports">
+        <div class="adsec-head">
+          <div>
+            <div class="adsec-title">자동 생성 보고서</div>
+            <div class="adsec-sub">REPORTS · Daily · Weekly · Monthly · Quarterly</div>
+          </div>
+          <div class="adsec-tools">
+            <button class="adchip active">All</button>
+            <button class="adchip">Operational</button>
+            <button class="adchip">Financial</button>
+            <button class="adchip">Compliance</button>
+          </div>
+        </div>
+
+        <div class="report-grid">
+          <div class="report-card">
+            <div class="report-type">Daily Operations</div>
+            <div class="report-title">Daily Trading Summary</div>
+            <div class="report-date">2026-05-15 · 자동 생성</div>
+            <p style="font-size:13px;color:var(--text-3);line-height:1.55;">24시간 거래량, 수수료 수익, 신규 NFT 발행, 도장 발급 통계.</p>
+            <div class="report-actions">
+              <button class="adchip">View</button>
+              <button class="adchip">Download PDF</button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-type">Weekly · Operational</div>
+            <div class="report-title">Weekly Asset Performance</div>
+            <div class="report-date">Week 19 · 2026-05-09 — 05-15</div>
+            <p style="font-size:13px;color:var(--text-3);line-height:1.55;">자산 유형별 거래 성과 · 카테고리 베스트셀러 · 가격 변동.</p>
+            <div class="report-actions">
+              <button class="adchip">View</button>
+              <button class="adchip">Download PDF</button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-type">Monthly · Financial</div>
+            <div class="report-title">April Fee Distribution</div>
+            <div class="report-date">2026-04 · 마감 보고서</div>
+            <p style="font-size:13px;color:var(--text-3);line-height:1.55;">월간 수수료 $847K · 40/30/20/10 자동 분배 · 창작자 지급 내역.</p>
+            <div class="report-actions">
+              <button class="adchip">View</button>
+              <button class="adchip">Download PDF</button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-type">Monthly · Compliance</div>
+            <div class="report-title">KYC & AML Compliance</div>
+            <div class="report-date">2026-04 · FIU 제출</div>
+            <p style="font-size:13px;color:var(--text-3);line-height:1.55;">KYC 신규/갱신 · 이상 거래 보고 · 자금 출처 점검 결과.</p>
+            <div class="report-actions">
+              <button class="adchip">View</button>
+              <button class="adchip">Download PDF</button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-type">Quarterly · Token</div>
+            <div class="report-title">Q1 Tokenomics Review</div>
+            <div class="report-date">2026 Q1 · 분기 보고서</div>
+            <p style="font-size:13px;color:var(--text-3);line-height:1.55;">$SOVE Mint/Burn 추이 · 담보율 · 스테이킹 분포 · 토큰 가격 분석.</p>
+            <div class="report-actions">
+              <button class="adchip">View</button>
+              <button class="adchip">Download PDF</button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-type">Quarterly · Security</div>
+            <div class="report-title">Q1 Audit & Security Report</div>
+            <div class="report-date">2026 Q1 · CertiK + Hacken</div>
+            <p style="font-size:13px;color:var(--text-3);line-height:1.55;">감사 결과 · 발견된 취약점 · 패치 적용 이력 · 보안 점수 추이.</p>
+            <div class="report-actions">
+              <button class="adchip">View</button>
+              <button class="adchip">Download PDF</button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-type">Dojang · Attestation</div>
+            <div class="report-title">Monthly Dojang Issuance</div>
+            <div class="report-date">2026-04 · 도장 발급 통계</div>
+            <p style="font-size:13px;color:var(--text-3);line-height:1.55;">6종 도장 발급 카운트 · 발급자별 통계 · 만료/갱신 현황.</p>
+            <div class="report-actions">
+              <button class="adchip">View</button>
+              <button class="adchip">Download PDF</button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-type">Annual · Foundation</div>
+            <div class="report-title">2025 Annual Report</div>
+            <div class="report-date">2026-03-31 발간</div>
+            <p style="font-size:13px;color:var(--text-3);line-height:1.55;">연간 운영 성과 · Treasury 사용 내역 · 거버넌스 통계 · 로드맵 진척.</p>
+            <div class="report-actions">
+              <button class="adchip">View</button>
+              <button class="adchip">Download PDF</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /admin-body -->
+  </main>
+</div>
+
+<script src="script.js?v=2"></script>
+<script src="wallet.js?v=2"></script>
+<script src="admin.js?v=1"></script>
+</body>
+</html>
