@@ -91,12 +91,12 @@
 
     <div class="dojang-flow">
       <div class="df-side">
-        <div class="df-label">Off-Chain</div>
+        <div class="df-label" data-i18n="dj.off">Off-Chain</div>
         <div class="df-items">
-          <div class="df-item"><div class="df-h">감정기관</div><div class="df-d">USD 기준 감정가 산정 및 감정서 발급</div></div>
-          <div class="df-item"><div class="df-h">수탁기관</div><div class="df-d">실물 보관 확인 및 보관 조건 검증</div></div>
-          <div class="df-item"><div class="df-h">보험사</div><div class="df-d">감정가 110% 보험 증서 발행</div></div>
-          <div class="df-item"><div class="df-h">Upbit KYC</div><div class="df-d">신원 확인 및 <span class="nobr">GIWA ID</span> 인증</div></div>
+          <div class="df-item"><div class="df-h" data-i18n="dj.off.1.h">Appraiser</div><div class="df-d" data-i18n="dj.off.1.d">USD-based appraisal and certificate issuance</div></div>
+          <div class="df-item"><div class="df-h" data-i18n="dj.off.2.h">Custodian</div><div class="df-d" data-i18n="dj.off.2.d">Physical storage check and condition verification</div></div>
+          <div class="df-item"><div class="df-h" data-i18n="dj.off.3.h">Insurer</div><div class="df-d" data-i18n="dj.off.3.d">Issues policy at 110% of appraised value</div></div>
+          <div class="df-item"><div class="df-h" data-i18n="dj.off.4.h">Upbit KYC</div><div class="df-d" data-i18n="dj.off.4.d">Identity check and GIWA ID issuance</div></div>
         </div>
       </div>
 
@@ -104,22 +104,22 @@
         <div class="df-stamp">
           <div class="ds-text">GIWA</div>
           <div class="ds-text">DOJANG</div>
-          <div class="ds-text">도장</div>
+          <div class="ds-text">SEAL</div>
         </div>
         <div class="df-rays" aria-hidden="true">
           <span></span><span></span><span></span><span></span>
           <span></span><span></span><span></span><span></span>
         </div>
-        <div class="df-caption">도장 어테스테이션 발급</div>
+        <div class="df-caption" data-i18n="dj.cap">Dojang Attestation Issued</div>
       </div>
 
       <div class="df-side">
-        <div class="df-label">On-Chain</div>
+        <div class="df-label" data-i18n="dj.on">On-Chain</div>
         <div class="df-items">
-          <div class="df-item"><div class="df-h">감정 도장</div><div class="df-d">감정가가 온체인에 영구 기록 · $SOVE Mint 트리거</div></div>
-          <div class="df-item"><div class="df-h">수탁 도장</div><div class="df-d">실물-NFT 1:1 매칭 어테스테이션</div></div>
-          <div class="df-item"><div class="df-h">보험 도장</div><div class="df-d">커버리지 한도와 유효기간 검증</div></div>
-          <div class="df-item"><div class="df-h">신원 도장</div><div class="df-d">Verified Address SBT · KYC 자동 통과</div></div>
+          <div class="df-item"><div class="df-h" data-i18n="dj.on.1.h">Appraisal Stamp</div><div class="df-d" data-i18n="dj.on.1.d">Appraisal recorded on-chain · triggers $SOVE Mint</div></div>
+          <div class="df-item"><div class="df-h" data-i18n="dj.on.2.h">Custody Stamp</div><div class="df-d" data-i18n="dj.on.2.d">Physical-to-NFT 1:1 attestation</div></div>
+          <div class="df-item"><div class="df-h" data-i18n="dj.on.3.h">Insurance Stamp</div><div class="df-d" data-i18n="dj.on.3.d">Coverage limit and validity verification</div></div>
+          <div class="df-item"><div class="df-h" data-i18n="dj.on.4.h">Identity Stamp</div><div class="df-d" data-i18n="dj.on.4.d">Verified Address SBT · auto-pass KYC</div></div>
         </div>
       </div>
     </div>
@@ -141,39 +141,39 @@
     <div class="dt-grid">
       <div class="dt">
         <div class="dt-no">01</div>
-        <div class="dt-name">Appraisal Stamp</div>
-        <div class="dt-issuer">발급자 · 인증 감정기관</div>
-        <div class="dt-desc">감정가(USD), 감정일, 감정기관 서명, 감정 방법론을 온체인에 영구 기록. $SOVE Mint의 직접 트리거가 됩니다.</div>
+        <div class="dt-name" data-i18n="dj.s.1.n">Appraisal Stamp</div>
+        <div class="dt-issuer" data-i18n="dj.s.1.i">Issuer · Certified Appraiser</div>
+        <div class="dt-desc" data-i18n="dj.s.1.d">Records appraised value (USD), date, appraiser signature, and methodology permanently on-chain. Direct trigger for $SOVE Mint.</div>
       </div>
       <div class="dt">
         <div class="dt-no">02</div>
-        <div class="dt-name">Custody Stamp</div>
-        <div class="dt-issuer">발급자 · 인증 수탁기관</div>
-        <div class="dt-desc">보관 위치, 보관 조건(온/습도), 입고 시점, 실물-NFT 1:1 매칭을 봉인. 월간 실사 후 갱신됩니다.</div>
+        <div class="dt-name" data-i18n="dj.s.2.n">Custody Stamp</div>
+        <div class="dt-issuer" data-i18n="dj.s.2.i">Issuer · Certified Custodian</div>
+        <div class="dt-desc" data-i18n="dj.s.2.d">Seals storage location, conditions (temp/humidity), intake time, and 1:1 physical-NFT matching. Renewed after monthly audits.</div>
       </div>
       <div class="dt">
         <div class="dt-no">03</div>
-        <div class="dt-name">Insurance Stamp</div>
-        <div class="dt-issuer">발급자 · 보험사</div>
-        <div class="dt-desc">보험 증서 번호, 커버리지(감정가 110%), 유효기간, 보험사 서명. 만료 전 자동 갱신 알림.</div>
+        <div class="dt-name" data-i18n="dj.s.3.n">Insurance Stamp</div>
+        <div class="dt-issuer" data-i18n="dj.s.3.i">Issuer · Insurer</div>
+        <div class="dt-desc" data-i18n="dj.s.3.d">Policy number, coverage (110% of appraisal), validity, insurer signature. Auto-renewal notice before expiry.</div>
       </div>
       <div class="dt">
         <div class="dt-no">04</div>
-        <div class="dt-name">Identity Stamp</div>
-        <div class="dt-issuer">발급자 · Upbit Korea</div>
-        <div class="dt-desc">GIWA Verified Address — KYC 완료 SBT. 1회 발급으로 모든 dApp에서 KYC 자동 통과.</div>
+        <div class="dt-name" data-i18n="dj.s.4.n">Identity Stamp</div>
+        <div class="dt-issuer" data-i18n="dj.s.4.i">Issuer · Upbit Korea</div>
+        <div class="dt-desc" data-i18n="dj.s.4.d">GIWA Verified Address — KYC-passed SBT. One issuance grants automatic KYC across all dApps.</div>
       </div>
       <div class="dt">
         <div class="dt-no">05</div>
-        <div class="dt-name">Redemption Stamp</div>
-        <div class="dt-issuer">발급자 · 수탁기관</div>
-        <div class="dt-desc">실물 반환 청구 시 발급. 출고 확인, 배송 정보, 인도 완료를 봉인. NFT 영구 소각의 근거.</div>
+        <div class="dt-name" data-i18n="dj.s.5.n">Redemption Stamp</div>
+        <div class="dt-issuer" data-i18n="dj.s.5.i">Issuer · Custodian</div>
+        <div class="dt-desc" data-i18n="dj.s.5.d">Issued on physical redemption claim. Seals release confirmation, shipping info, and delivery completion — basis for permanent NFT burn.</div>
       </div>
       <div class="dt">
         <div class="dt-no">06</div>
-        <div class="dt-name">Re-Appraisal Stamp</div>
-        <div class="dt-issuer">발급자 · 감정 위원회</div>
-        <div class="dt-desc">연 1회 정기 재감정. 시장가 보정 + 담보율 재계산. 특별 재감정은 보유자 요청으로 진행.</div>
+        <div class="dt-name" data-i18n="dj.s.6.n">Re-Appraisal Stamp</div>
+        <div class="dt-issuer" data-i18n="dj.s.6.i">Issuer · Appraisal Committee</div>
+        <div class="dt-desc" data-i18n="dj.s.6.d">Annual scheduled re-appraisal. Adjusts market value + recalculates collateral ratio. Special re-appraisal upon holder request.</div>
       </div>
     </div>
   </div>
@@ -190,25 +190,25 @@
     <div class="code-block">
       <div class="code-h">DojangAttestation.sol</div>
       <pre>struct Attestation {
-  bytes32 schemaUID;       // 도장 종류 식별자
-  address issuer;          // 인증된 발급 기관
-  address subject;         // 대상 자산 또는 지갑
-  uint256 assetId;         // SOVE 자산 ID
-  uint256 issuedAt;        // 발급 timestamp
-  uint256 expiresAt;       // 만료 timestamp (0 = 무기한)
-  bytes32 dataHash;        // 오프체인 데이터 해시
+  bytes32 schemaUID;       // Dojang type identifier
+  address issuer;          // Certified issuing institution
+  address subject;         // Target asset or wallet
+  uint256 assetId;         // SOVE asset ID
+  uint256 issuedAt;        // Issuance timestamp
+  uint256 expiresAt;       // Expiry (0 = perpetual)
+  bytes32 dataHash;        // Off-chain data hash
   string  metadataURI;     // IPFS URI
-  bytes   signature;       // 발급자 서명
+  bytes   signature;       // Issuer signature
 }</pre>
     </div>
 
-    <h3 class="sub-h">검증 로직</h3>
+    <h3 class="sub-h" data-i18n="dj.att.h">Verification Logic</h3>
     <div class="step-list">
-      <div class="step-row"><span class="step-no">01</span><span class="step-name">스키마 검증</span><span class="step-d">schemaUID가 등록된 도장 종류와 일치하는지 확인</span></div>
-      <div class="step-row"><span class="step-no">02</span><span class="step-name">발급자 권한</span><span class="step-d">issuer가 해당 도장에 대한 발급 권한 보유 확인</span></div>
-      <div class="step-row"><span class="step-no">03</span><span class="step-name">유효기간</span><span class="step-d">expiresAt &gt; block.timestamp</span></div>
-      <div class="step-row"><span class="step-no">04</span><span class="step-name">서명 검증</span><span class="step-d">signature가 issuer의 비공개키로 서명되었는지 ecrecover로 확인</span></div>
-      <div class="step-row hl-row"><span class="step-no">05</span><span class="step-name">데이터 해시</span><span class="step-d">metadataURI 내용 SHA-256 = dataHash 일치 확인 → 유효</span></div>
+      <div class="step-row"><span class="step-no">01</span><span class="step-name" data-i18n="dj.att.s.1.n">Schema Validation</span><span class="step-d" data-i18n="dj.att.s.1.d">Check that schemaUID matches a registered Dojang type</span></div>
+      <div class="step-row"><span class="step-no">02</span><span class="step-name" data-i18n="dj.att.s.2.n">Issuer Authority</span><span class="step-d" data-i18n="dj.att.s.2.d">Confirm the issuer has authority for that Dojang type</span></div>
+      <div class="step-row"><span class="step-no">03</span><span class="step-name" data-i18n="dj.att.s.3.n">Validity Period</span><span class="step-d" data-i18n="dj.att.s.3.d">expiresAt > block.timestamp</span></div>
+      <div class="step-row"><span class="step-no">04</span><span class="step-name" data-i18n="dj.att.s.4.n">Signature Verification</span><span class="step-d" data-i18n="dj.att.s.4.d">Verify signature was signed by issuer's private key via ecrecover</span></div>
+      <div class="step-row hl-row"><span class="step-no">05</span><span class="step-name" data-i18n="dj.att.s.5.n">Data Hash</span><span class="step-d" data-i18n="dj.att.s.5.d">Confirm SHA-256 of metadataURI = dataHash → valid</span></div>
     </div>
   </div>
 </section>
@@ -225,26 +225,26 @@
       <div class="dc-row">
         <div class="dc-step">
           <div class="dc-step-no">01</div>
-          <div class="dc-step-name">실물 입고</div>
-          <div class="dc-step-d">감정 → 수탁 → 보험 — 오프체인에서 세 가지 검수가 모두 완료되어야 합니다.</div>
+          <div class="dc-step-name" data-i18n="dj.cyc.1.n">Physical Intake</div>
+          <div class="dc-step-d" data-i18n="dj.cyc.1.d">Appraisal → Custody → Insurance — all three off-chain checks must complete.</div>
         </div>
         <div class="dc-sep">/</div>
         <div class="dc-step">
           <div class="dc-step-no">02</div>
-          <div class="dc-step-name">도장 발급</div>
-          <div class="dc-step-d">3종 도장(Appraisal·Custody·Insurance)이 <span class="nobr">GIWA Chain</span>에 어테스테이션됩니다.</div>
+          <div class="dc-step-name" data-i18n="dj.cyc.2.n">Dojang Issuance</div>
+          <div class="dc-step-d" data-i18n="dj.cyc.2.d">Three stamps (Appraisal · Custody · Insurance) are attested on GIWA Chain.</div>
         </div>
         <div class="dc-sep">/</div>
         <div class="dc-step">
           <div class="dc-step-no">03</div>
-          <div class="dc-step-name">NFT 발행</div>
-          <div class="dc-step-d">DojangVerifier가 3종 도장을 검증하면 SOVEMinter가 NFT 발행과 $SOVE Mint를 동시에 실행합니다.</div>
+          <div class="dc-step-name" data-i18n="dj.cyc.3.n">NFT Mint</div>
+          <div class="dc-step-d" data-i18n="dj.cyc.3.d">When DojangVerifier validates all three stamps, SOVEMinter mints the NFT and $SOVE simultaneously.</div>
         </div>
         <div class="dc-sep">/</div>
         <div class="dc-step">
           <div class="dc-step-no">04</div>
-          <div class="dc-step-name">반환 도장</div>
-          <div class="dc-step-d">보유자가 실물 반환을 청구하면 Redemption Stamp가 발급되고 NFT는 영구 소각됩니다.</div>
+          <div class="dc-step-name" data-i18n="dj.cyc.4.n">Redemption Stamp</div>
+          <div class="dc-step-d" data-i18n="dj.cyc.4.d">When a holder requests physical redemption, a Redemption Stamp is issued and the NFT is permanently burned.</div>
         </div>
       </div>
     </div>
@@ -304,6 +304,6 @@
 
 <script src="script.js?v=2"></script>
 <script src="wallet.js?v=2"></script>
-<script src="i18n.js?v=2"></script>
+<script src="i18n.js?v=4"></script>
 </body>
 </html>
