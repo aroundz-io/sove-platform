@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="wallet.css" />
+<link rel="stylesheet" href="i18n.css" />
 </head>
 <body>
 
@@ -42,12 +43,12 @@
     <div class="hero-glow"></div>
   </div>
   <div class="container page-hero-content">
-    <div class="eyebrow">Platform</div>
-    <h1 class="page-title">
+    <div class="eyebrow" data-i18n="platform.hero.eyebrow">Platform</div>
+    <h1 class="page-title" data-i18n="platform.hero.title">
       다섯 개의<br/>
       <span class="hl">코어 모듈</span>.
     </h1>
-    <p class="page-lead">
+    <p class="page-lead" data-i18n="platform.hero.lead">
       독립적으로 운영되며 유기적으로 연결됩니다.
       각 모듈은 자체 스마트 컨트랙트로 작동하며 $SOVE 토큰 이코노미를 통해 가치를 공유합니다.
     </p>
@@ -353,5 +354,6 @@
 
 <script src="script.js?v=2"></script>
 <script src="wallet.js?v=2"></script>
+<script src="i18n.js?v=1"></script>
 </body>
 </html>

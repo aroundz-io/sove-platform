@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="wallet.css" />
+<link rel="stylesheet" href="i18n.css" />
 </head>
 <body>
 
@@ -42,12 +43,12 @@
     <div class="hero-glow"></div>
   </div>
   <div class="container page-hero-content">
-    <div class="eyebrow">Token</div>
-    <h1 class="page-title">
+    <div class="eyebrow" data-i18n="token.hero.eyebrow">Token</div>
+    <h1 class="page-title" data-i18n="token.hero.title">
       <span class="hl">$SOVE</span>.<br/>
       실물 가치 연동 토큰.
     </h1>
-    <p class="page-lead">
+    <p class="page-lead" data-i18n="token.hero.lead">
       $SOVE는 SOVE 플랫폼의 코어 토큰입니다.
       실물 자산의 감정가에 따라 발행되며, 반환·거래 수수료에서 자동 소각되는 디플레이션 메커니즘을 가집니다.
       모든 발행과 소각은 도장 어테스테이션을 통해 검증됩니다.
@@ -338,5 +339,6 @@
 
 <script src="script.js?v=2"></script>
 <script src="wallet.js?v=2"></script>
+<script src="i18n.js?v=1"></script>
 </body>
 </html>

@@ -1,0 +1,72 @@
+/* ============================================
+   SOVE i18n — Language Switcher Styles
+   ============================================ */
+
+.i18n-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  margin-right: 8px;
+}
+
+.i18n-btn {
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  color: var(--text-mute);
+  cursor: pointer;
+  transition: color 0.2s var(--ease), background 0.2s var(--ease);
+  min-width: 30px;
+  line-height: 1;
+}
+
+.i18n-btn:hover {
+  color: var(--text-2);
+}
+
+.i18n-btn.active {
+  background: var(--acc);
+  color: #0A0A0A;
+  font-weight: 700;
+}
+
+/* Admin variant — slightly smaller, fits topbar */
+.admin-topbar .i18n-switch,
+.admin-actions .i18n-switch {
+  background: rgba(255, 255, 255, 0.03);
+}
+.admin-actions .i18n-btn {
+  padding: 5px 8px;
+  font-size: 10px;
+}
+
+@media (max-width: 768px) {
+  .i18n-switch {
+    margin-right: 0;
+    padding: 2px;
+  }
+  .i18n-btn {
+    padding: 5px 7px;
+    font-size: 9.5px;
+    min-width: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* On small mobile, hide ES/JA/ZH to save space; keep EN/KO */
+  .i18n-btn[data-lang="zh"],
+  .i18n-btn[data-lang="ja"],
+  .i18n-btn[data-lang="es"] {
+    display: none;
+  }
+}

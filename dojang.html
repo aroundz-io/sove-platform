@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="wallet.css" />
+<link rel="stylesheet" href="i18n.css" />
 </head>
 <body>
 
@@ -42,15 +43,15 @@
     <div class="hero-glow"></div>
   </div>
   <div class="container page-hero-content">
-    <div class="eyebrow">Trust Layer</div>
-    <h1 class="page-title">
+    <div class="eyebrow" data-i18n="dojang.hero.eyebrow">Trust Layer</div>
+    <h1 class="page-title" data-i18n="dojang.hero.title">
       도장.<br/>
       <span class="hl">오프체인을 온체인으로</span>.
     </h1>
-    <p class="page-lead">
-      <span class="nobr">GIWA Dojang</span>은 신뢰할 수 있는 오프체인 정보를
+    <p class="page-lead" data-i18n="dojang.hero.lead">
+      GIWA Dojang은 신뢰할 수 있는 오프체인 정보를
       검증된 온체인 어테스테이션(Attestation)으로 발급하는
-      <span class="nobr">GIWA Chain</span>의 네이티브 신뢰 레이어입니다.
+      GIWA Chain의 네이티브 신뢰 레이어입니다.
       SOVE는 모든 실물 자산의 흐름을 도장으로 봉인합니다.
     </p>
   </div>
@@ -303,5 +304,6 @@
 
 <script src="script.js?v=2"></script>
 <script src="wallet.js?v=2"></script>
+<script src="i18n.js?v=1"></script>
 </body>
 </html>
